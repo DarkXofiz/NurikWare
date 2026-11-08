@@ -4,10 +4,6 @@ import java.util.Objects;
 
 public record class12018(String key) {
 
-   public class12018(String key) {
-      super();
-      this.key = key;
-   }
 
    @Override
    public boolean equals(Object var1) {

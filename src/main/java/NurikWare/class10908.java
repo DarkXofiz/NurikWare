@@ -8,15 +8,6 @@ public record class10908(int hotbarSlot, int inventorySlot, class07050 hand, int
       return this.hand;
    }
 
-   class10908(int hotbarSlot, int inventorySlot, class07050 hand, int pitch, boolean jump, int delayAfter) {
-      super();
-      this.hotbarSlot = hotbarSlot;
-      this.inventorySlot = inventorySlot;
-      this.hand = hand;
-      this.pitch = pitch;
-      this.jump = jump;
-      this.delayAfter = delayAfter;
-   }
 
    public int i() {
       return this.hotbarSlot;

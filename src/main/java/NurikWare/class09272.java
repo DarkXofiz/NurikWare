@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public non-sealed record class09272(List<class11827> presets) implements class09279 {
+public record class09272(List<class11827> presets) implements class09279 {
 
-   public class09272(List<class11827> presets) {
-      super();
-      this.presets = presets;
-   }
 
    @Override
    public void y(class11940 var1) {

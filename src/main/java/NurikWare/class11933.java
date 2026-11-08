@@ -4,7 +4,7 @@ import minecraft.class06584;
 import minecraft.class07085;
 import minecraft.class07438;
 
-public enum class11933 {
+public final class class11933 {
    private static String[] strings_0d3a21382a7b83848bd4500e6adef3cae;
    public static class11933 staticFields_0d3a21382a7b83848bd4500e6adef3cae_0 = new class11933(
       2, 6, class07085.field_6174, var0 -> class07438.method_63624(var0, class07085.field_6174)

@@ -11,16 +11,6 @@ record class09760(int contentBottom, int layoutBottom, int currentHeight, int ap
       return this.freeRects;
    }
 
-   class09760(int contentBottom, int layoutBottom, int currentHeight, int appendX, int appendY, int appendRowHeight, ArrayList<class09756> freeRects) {
-      super();
-      this.contentBottom = contentBottom;
-      this.layoutBottom = layoutBottom;
-      this.currentHeight = currentHeight;
-      this.appendX = appendX;
-      this.appendY = appendY;
-      this.appendRowHeight = appendRowHeight;
-      this.freeRects = freeRects;
-   }
 
    public int i() {
       return this.appendY;

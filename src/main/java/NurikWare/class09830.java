@@ -23,36 +23,6 @@ public record class09830(
       return this.trackContentWidth;
    }
 
-   public class09830(
-      float trackX,
-      float trackY,
-      float trackWidth,
-      float trackHeight,
-      float trackContentX,
-      float trackContentY,
-      float trackContentWidth,
-      float trackContentHeight,
-      float thumbX,
-      float thumbY,
-      float thumbWidth,
-      float thumbHeight,
-      float thumbTravel
-   ) {
-      super();
-      this.trackX = trackX;
-      this.trackY = trackY;
-      this.trackWidth = trackWidth;
-      this.trackHeight = trackHeight;
-      this.trackContentX = trackContentX;
-      this.trackContentY = trackContentY;
-      this.trackContentWidth = trackContentWidth;
-      this.trackContentHeight = trackContentHeight;
-      this.thumbX = thumbX;
-      this.thumbY = thumbY;
-      this.thumbWidth = thumbWidth;
-      this.thumbHeight = thumbHeight;
-      this.thumbTravel = thumbTravel;
-   }
 
    public float B() {
       return this.trackContentHeight;

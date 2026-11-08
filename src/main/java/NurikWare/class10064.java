@@ -6,10 +6,6 @@ record class10064(class10052 run) implements class10053 {
       return this.run.N(var1).Z;
    }
 
-   class10064(class10052 run) {
-      super();
-      this.run = run;
-   }
 
    @Override
    public float y(class10021 var1) {

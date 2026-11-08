@@ -6,15 +6,6 @@ public record class11637(String normalizedRef, int width, int height, byte[] rgb
       return this.alphaMask;
    }
 
-   private class11637(String normalizedRef, int width, int height, byte[] rgbaPixels, byte[] alphaMask, String failureReason) {
-      super();
-      this.normalizedRef = normalizedRef;
-      this.width = width;
-      this.height = height;
-      this.rgbaPixels = rgbaPixels;
-      this.alphaMask = alphaMask;
-      this.failureReason = failureReason;
-   }
 
    public int i() {
       return this.height;

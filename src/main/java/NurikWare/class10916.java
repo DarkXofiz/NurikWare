@@ -10,13 +10,6 @@ public record class10916(class00500 state, class00494 shape, class07209 pos, boo
       return this.pos;
    }
 
-   class10916(class00500 state, class00494 shape, class07209 pos, boolean open) {
-      super();
-      this.state = state;
-      this.shape = shape;
-      this.pos = pos;
-      this.open = open;
-   }
 
    public boolean u() {
       return this.open;

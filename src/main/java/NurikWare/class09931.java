@@ -10,17 +10,6 @@ public record class09931(String text, float x, float y, int color, float fontSiz
       return this.outlineColor;
    }
 
-   public class09931(String text, float x, float y, int color, float fontSize, class09838 fontSpec, int outlineColor, float outlineWidth) {
-      super();
-      this.text = text;
-      this.x = x;
-      this.y = y;
-      this.color = color;
-      this.fontSize = fontSize;
-      this.fontSpec = fontSpec;
-      this.outlineColor = outlineColor;
-      this.outlineWidth = outlineWidth;
-   }
 
    public float B() {
       return this.outlineWidth;

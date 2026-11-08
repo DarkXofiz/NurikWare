@@ -20,7 +20,7 @@ public class class11535 {
    public class11535(String var1, boolean var2, Consumer<class11535> var3) {
       super();
       this.u();
-      this.R_4 = (Supplier<>)() -> null;
+      this.R_4 = () -> null;
       this.R_0 = class12033.y(var1);
       this.R_1 = var2;
       this.R_3 = var2;

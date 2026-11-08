@@ -8,13 +8,6 @@ public record class11885(ByteBuffer pcm, int channels, int sampleBits, int sampl
       return this.channels;
    }
 
-   public class11885(ByteBuffer pcm, int channels, int sampleBits, int sampleRate) {
-      super();
-      this.pcm = pcm;
-      this.channels = channels;
-      this.sampleBits = sampleBits;
-      this.sampleRate = sampleRate;
-   }
 
    public ByteBuffer u() {
       return this.pcm;

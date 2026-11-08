@@ -9,12 +9,6 @@ public record class11906(class11909 type, Pair<Integer, Integer> group, int numb
       return this.group;
    }
 
-   public class11906(class11909 type, Pair<Integer, Integer> group, int number) {
-      super();
-      this.type = type;
-      this.group = group;
-      this.number = number;
-   }
 
    @Override
    public boolean equals(Object var1) {

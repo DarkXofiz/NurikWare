@@ -5,12 +5,6 @@ record class09714(int[] start, int[] end, int[] cls) {
       return this.cls;
    }
 
-   class09714(int[] start, int[] end, int[] cls) {
-      super();
-      this.start = start;
-      this.end = end;
-      this.cls = cls;
-   }
 
    public int[] y() {
       return this.end;

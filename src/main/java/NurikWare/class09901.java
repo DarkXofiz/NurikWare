@@ -5,13 +5,6 @@ public record class09901(float pivotX, float pivotY, float scale, float rotation
       return this.pivotY;
    }
 
-   public class09901(float pivotX, float pivotY, float scale, float rotationDegrees) {
-      super();
-      this.pivotX = pivotX;
-      this.pivotY = pivotY;
-      this.scale = scale;
-      this.rotationDegrees = rotationDegrees;
-   }
 
    public float i() {
       return this.rotationDegrees;

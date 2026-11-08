@@ -15,12 +15,6 @@ public record class10344(class07209 pos, class00891 block, class02733 orientatio
       return this.orientation;
    }
 
-   public class10344(class07209 pos, class00891 block, @Nullable class02733 orientation) {
-      super();
-      this.pos = pos;
-      this.block = block;
-      this.orientation = orientation;
-   }
 
    public class00891 y() {
       return this.block;

@@ -5,12 +5,6 @@ public record class09749(float min, float def, float max) {
       return this.max;
    }
 
-   public class09749(float min, float def, float max) {
-      super();
-      this.min = min;
-      this.def = def;
-      this.max = max;
-   }
 
    public float y() {
       return this.def;

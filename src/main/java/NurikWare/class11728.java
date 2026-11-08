@@ -12,23 +12,6 @@ public record class11728(
       return this.u1;
    }
 
-   class11728(
-      float x1, float y1, float x2, float y2, float u1, float v1, float u2, float v2, int atlasPage, int atlasPageWidth, int atlasPageHeight, float pxRange
-   ) {
-      super();
-      this.x1 = x1;
-      this.y1 = y1;
-      this.x2 = x2;
-      this.y2 = y2;
-      this.u1 = u1;
-      this.v1 = v1;
-      this.u2 = u2;
-      this.v2 = v2;
-      this.atlasPage = atlasPage;
-      this.atlasPageWidth = atlasPageWidth;
-      this.atlasPageHeight = atlasPageHeight;
-      this.pxRange = pxRange;
-   }
 
    public int B() {
       return this.atlasPageWidth;

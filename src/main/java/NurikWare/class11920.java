@@ -3,7 +3,7 @@ package NurikWare;
 import java.util.function.Consumer;
 import minecraft.class00381;
 
-public enum class11920 {
+public final class class11920 {
    private static String[] strings_024517ede86c7388489d2ebaa4ff49c2b;
    private static byte[] bytes_124517ede86c7388489d2ebaa4ff49c2b;
    public static Object[] staticFields_024517ede86c7388489d2ebaa4ff49c2b;

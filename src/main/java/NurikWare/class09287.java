@@ -1,12 +1,7 @@
 package NurikWare;
 
-public non-sealed record class09287(int kindId, long updatedAt) implements class09260 {
+public record class09287(int kindId, long updatedAt) implements class09260 {
 
-   public class09287(int kindId, long updatedAt) {
-      super();
-      this.kindId = kindId;
-      this.updatedAt = updatedAt;
-   }
 
    public int y() {
       return this.kindId;

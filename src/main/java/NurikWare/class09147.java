@@ -6,15 +6,6 @@ public record class09147(class11499 rotation, float yawOffset, float pitchOffset
       return this.pitchOffset;
    }
 
-   public class09147(class11499 rotation, float yawOffset, float pitchOffset, float yawSpeed, float pitchSpeed, boolean active) {
-      super();
-      this.rotation = rotation;
-      this.yawOffset = yawOffset;
-      this.pitchOffset = pitchOffset;
-      this.yawSpeed = yawSpeed;
-      this.pitchSpeed = pitchSpeed;
-      this.active = active;
-   }
 
    public class11499 i() {
       return this.rotation;

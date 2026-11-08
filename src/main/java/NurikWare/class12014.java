@@ -11,10 +11,6 @@ public record class12014(boolean enabled) implements class12007 {
       y_1 = null;
    }
 
-   public class12014(boolean enabled) {
-      super();
-      this.enabled = enabled;
-   }
 
    static {
       L();

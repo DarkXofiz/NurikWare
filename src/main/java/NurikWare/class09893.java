@@ -7,14 +7,6 @@ public record class09893(float x, float y, float width, float height, Vector4fc 
       return this.width;
    }
 
-   public class09893(float x, float y, float width, float height, Vector4fc borderRadius) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-      this.borderRadius = borderRadius;
-   }
 
    public Vector4fc i() {
       return this.borderRadius;

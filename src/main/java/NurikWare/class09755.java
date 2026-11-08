@@ -5,14 +5,6 @@ public record class09755(float[] pixels, int width, int height, int channels, do
       return this.height;
    }
 
-   public class09755(float[] pixels, int width, int height, int channels, double advance) {
-      super();
-      this.pixels = pixels;
-      this.width = width;
-      this.height = height;
-      this.channels = channels;
-      this.advance = advance;
-   }
 
    public double i() {
       return this.advance;

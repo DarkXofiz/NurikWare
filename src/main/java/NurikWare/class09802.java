@@ -5,12 +5,6 @@ record class09802(float x, float y, class10003 resolvedSide) {
       return this.resolvedSide;
    }
 
-   class09802(float x, float y, class10003 resolvedSide) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.resolvedSide = resolvedSide;
-   }
 
    public float N() {
       return this.x;

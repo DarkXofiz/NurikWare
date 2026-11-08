@@ -6,13 +6,6 @@ public record class11839(String key, String icon, class11854 menuCategory, class
       return this.key;
    }
 
-   public class11839(String key, String icon, class11854 menuCategory, class09785<class11854> state) {
-      super();
-      this.key = key;
-      this.icon = icon;
-      this.menuCategory = menuCategory;
-      this.state = state;
-   }
 
    public String u() {
       return this.icon;

@@ -7,11 +7,6 @@ public record class09770(boolean layoutRebuilds, boolean drawCommandRebuilds) {
       return new class09770(true, true);
    }
 
-   public class09770(boolean layoutRebuilds, boolean drawCommandRebuilds) {
-      super();
-      this.layoutRebuilds = layoutRebuilds;
-      this.drawCommandRebuilds = drawCommandRebuilds;
-   }
 
    public boolean i() {
       return this.drawCommandRebuilds;

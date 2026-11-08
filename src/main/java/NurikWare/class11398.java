@@ -2,11 +2,6 @@ package NurikWare;
 
 public record class11398(class09173 bind, class11386 change) {
 
-   public class11398(class09173 bind, class11386 change) {
-      super();
-      this.bind = bind;
-      this.change = change;
-   }
 
    public class09173 y() {
       return this.bind;

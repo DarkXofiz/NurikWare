@@ -6,12 +6,6 @@ public record class09143(boolean active, float multiplier, float envelope) {
       return this.active;
    }
 
-   public class09143(boolean active, float multiplier, float envelope) {
-      super();
-      this.active = active;
-      this.multiplier = multiplier;
-      this.envelope = envelope;
-   }
 
    public float u() {
       return this.envelope;

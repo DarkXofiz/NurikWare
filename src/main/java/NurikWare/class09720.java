@@ -9,19 +9,6 @@ record class09720(class09726 newPage, class09726 oldPage, int width, int height,
       return this.y;
    }
 
-   class09720(class09726 newPage, class09726 oldPage, int width, int height, int[] cp, int[] x, int[] y, int[] w, int[] h, int count) {
-      super();
-      this.newPage = newPage;
-      this.oldPage = oldPage;
-      this.width = width;
-      this.height = height;
-      this.cp = cp;
-      this.x = x;
-      this.y = y;
-      this.w = w;
-      this.h = h;
-      this.count = count;
-   }
 
    public int[] B() {
       return this.w;

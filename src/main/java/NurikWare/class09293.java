@@ -1,11 +1,7 @@
 package NurikWare;
 
-public non-sealed record class09293(long id) implements class09279 {
+public record class09293(long id) implements class09279 {
 
-   public class09293(long id) {
-      super();
-      this.id = id;
-   }
 
    @Override
    public void y(class11940 var1) {

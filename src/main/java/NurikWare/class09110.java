@@ -12,13 +12,6 @@ public record class09110(Matrix4fc modelView, Vector4fc colorModulator, Vector3f
       return this.modelOffset;
    }
 
-   public class09110(Matrix4fc modelView, Vector4fc colorModulator, Vector3fc modelOffset, Matrix4fc textureMatrix) {
-      super();
-      this.modelView = modelView;
-      this.colorModulator = colorModulator;
-      this.modelOffset = modelOffset;
-      this.textureMatrix = textureMatrix;
-   }
 
    public Matrix4fc u() {
       return this.textureMatrix;

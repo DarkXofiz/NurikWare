@@ -7,10 +7,6 @@ import minecraft.class03926;
 import minecraft.class04770;
 
 public record class10103(class03926 message) implements class03059 {
-   public class10103(class03926 message) {
-      super();
-      this.message = message;
-   }
 
    public class03926 y() {
       return this.message;

@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public non-sealed record class09267(List<class10732> entries) implements class09260 {
+public record class09267(List<class10732> entries) implements class09260 {
 
-   public class09267(List<class10732> entries) {
-      super();
-      this.entries = entries;
-   }
 
    public static class09267 y(class11940 var0) {
       int i = var0.R();

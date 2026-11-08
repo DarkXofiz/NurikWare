@@ -25,7 +25,6 @@ public class class11601 {
       y();
       N();
       int i = (Integer)u_2;
-      (Integer)N_0;
       N_2 = i;
       class09991 class09991x = class09991.N();
       int j = (Integer)u_2;

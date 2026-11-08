@@ -13,16 +13,6 @@ public record class11830(float value, float min, float max, float increment, Sup
       return this.wasMove;
    }
 
-   public class11830(float value, float min, float max, float increment, Supplier<String> postfix, Consumer<Float> onChange, class09785<Boolean> wasMove) {
-      super();
-      this.value = value;
-      this.min = min;
-      this.max = max;
-      this.increment = increment;
-      this.postfix = postfix;
-      this.onChange = onChange;
-      this.wasMove = wasMove;
-   }
 
    public float B() {
       return this.value;

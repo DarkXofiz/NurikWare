@@ -6,13 +6,6 @@ public record class11208(String name, boolean uniform, Object value, class11169 
       return this.value;
    }
 
-   private class11208(String name, boolean uniform, Object value, class11169 expectedType) {
-      super();
-      this.name = name;
-      this.uniform = uniform;
-      this.value = value;
-      this.expectedType = expectedType;
-   }
 
    public String u() {
       return this.name;

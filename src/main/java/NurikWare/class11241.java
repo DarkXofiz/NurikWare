@@ -6,11 +6,6 @@ import minecraft.class06889;
 
 public record class11241(List<class06889> trajectory, Optional<class11223> landPoint) {
 
-   public class11241(List<class06889> trajectory, Optional<class11223> landPoint) {
-      super();
-      this.trajectory = trajectory;
-      this.landPoint = landPoint;
-   }
 
    public List<class06889> y() {
       return this.trajectory;

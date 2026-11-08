@@ -9,11 +9,6 @@ public record class10318(class07321 center, int viewDistance) implements class04
       return this.center.B + this.viewDistance + 1;
    }
 
-   public class10318(class07321 center, int viewDistance) {
-      super();
-      this.center = center;
-      this.viewDistance = viewDistance;
-   }
 
    public class07321 i() {
       return this.center;

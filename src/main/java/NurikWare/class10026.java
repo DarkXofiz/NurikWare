@@ -5,13 +5,6 @@ record class10026(String text, float width, float height, int lineCount) {
       return this.height;
    }
 
-   class10026(String text, float width, float height, int lineCount) {
-      super();
-      this.text = text;
-      this.width = width;
-      this.height = height;
-      this.lineCount = lineCount;
-   }
 
    public int u() {
       return this.lineCount;

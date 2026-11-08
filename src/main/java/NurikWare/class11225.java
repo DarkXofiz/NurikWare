@@ -12,12 +12,6 @@ public record class11225(double gravity, float airDrag, float waterDrag) {
       return this.gravity;
    }
 
-   public class11225(double gravity, float airDrag, float waterDrag) {
-      super();
-      this.gravity = gravity;
-      this.airDrag = airDrag;
-      this.waterDrag = waterDrag;
-   }
 
    static {
       u();

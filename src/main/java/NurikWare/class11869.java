@@ -10,10 +10,6 @@ public record class11869(class06584 stack) implements class11849 {
       y_0 = 16;
    }
 
-   public class11869(class06584 stack) {
-      super();
-      this.stack = stack;
-   }
 
    static {
       L();

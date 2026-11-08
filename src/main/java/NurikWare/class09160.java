@@ -6,15 +6,6 @@ public record class09160(float yawSpeed, float pitchSpeed, boolean fastCorrectio
       return this.angularFlick;
    }
 
-   public class09160(float yawSpeed, float pitchSpeed, boolean fastCorrection, float yawOffset, float pitchOffset, boolean angularFlick) {
-      super();
-      this.yawSpeed = yawSpeed;
-      this.pitchSpeed = pitchSpeed;
-      this.fastCorrection = fastCorrection;
-      this.yawOffset = yawOffset;
-      this.pitchOffset = pitchOffset;
-      this.angularFlick = angularFlick;
-   }
 
    public boolean i() {
       return this.fastCorrection;

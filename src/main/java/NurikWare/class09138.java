@@ -21,30 +21,6 @@ public record class09138(
       return this.pitchDelta;
    }
 
-   public class09138(
-      float yawDelta,
-      float pitchDelta,
-      float minYawShare,
-      float minPitchShare,
-      float maxYawShare,
-      float maxPitchShare,
-      float yawJerkScale,
-      float pitchJerkScale,
-      boolean breakSmoothing,
-      boolean outputBurst
-   ) {
-      super();
-      this.yawDelta = yawDelta;
-      this.pitchDelta = pitchDelta;
-      this.minYawShare = minYawShare;
-      this.minPitchShare = minPitchShare;
-      this.maxYawShare = maxYawShare;
-      this.maxPitchShare = maxPitchShare;
-      this.yawJerkScale = yawJerkScale;
-      this.pitchJerkScale = pitchJerkScale;
-      this.breakSmoothing = breakSmoothing;
-      this.outputBurst = outputBurst;
-   }
 
    public float B() {
       return this.maxYawShare;

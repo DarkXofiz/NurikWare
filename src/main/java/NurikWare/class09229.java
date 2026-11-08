@@ -6,14 +6,6 @@ public record class09229(class11854 displayed, class11854 previous, int directio
       return this.previous;
    }
 
-   private class09229(class11854 displayed, class11854 previous, int direction, int generation, boolean active) {
-      super();
-      this.displayed = displayed;
-      this.previous = previous;
-      this.direction = direction;
-      this.generation = generation;
-      this.active = active;
-   }
 
    boolean B() {
       return this.active && this.previous != null;

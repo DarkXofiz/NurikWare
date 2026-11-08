@@ -3,7 +3,7 @@ package NurikWare;
 import java.util.Objects;
 import java.util.UUID;
 
-public non-sealed record class11166(boolean insecure, UUID uuid, String name, byte[] data) implements class11776 {
+public record class11166(boolean insecure, UUID uuid, String name, byte[] data) implements class11776 {
 
    @Override
    public UUID L() {

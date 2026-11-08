@@ -19,10 +19,6 @@ public record class11857(String text) implements class11868 {
       y_5 = null;
    }
 
-   public class11857(String text) {
-      super();
-      this.text = text;
-   }
 
    static {
       M();

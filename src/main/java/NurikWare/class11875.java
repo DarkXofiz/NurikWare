@@ -4,10 +4,6 @@ import java.util.function.BooleanSupplier;
 
 public record class11875(BooleanSupplier checked) implements class11849 {
 
-   public class11875(BooleanSupplier checked) {
-      super();
-      this.checked = checked;
-   }
 
    @Override
    public class09798 N(class09809 var1, class11834 var2) {

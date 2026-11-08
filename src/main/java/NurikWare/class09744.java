@@ -11,16 +11,6 @@ record class09744(class09946[] handles, int[] outX, int[] outY, int count, int u
       return this.newHeight;
    }
 
-   class09744(class09946[] handles, int[] outX, int[] outY, int count, int usedBottom, int usedLayoutBottom, int newHeight) {
-      super();
-      this.handles = handles;
-      this.outX = outX;
-      this.outY = outY;
-      this.count = count;
-      this.usedBottom = usedBottom;
-      this.usedLayoutBottom = usedLayoutBottom;
-      this.newHeight = newHeight;
-   }
 
    public int i() {
       return this.usedBottom;

@@ -31,11 +31,6 @@ public record class11940(ByteBuf parent, short protocolVersion) {
       this(var1, (short)16);
    }
 
-   public class11940(ByteBuf parent, short protocolVersion) {
-      super();
-      this.parent = parent;
-      this.protocolVersion = protocolVersion;
-   }
 
    static {
       T();

@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.UUID;
 
-public non-sealed record class11991(String name, UUID skinUuid, boolean generated) implements class11776 {
+public record class11991(String name, UUID skinUuid, boolean generated) implements class11776 {
 
    public static UUID L(String var0) {
       return UUID.nameUUIDFromBytes(("OfflinePlayer:" + var0).getBytes(StandardCharsets.UTF_8));
@@ -15,12 +15,6 @@ public non-sealed record class11991(String name, UUID skinUuid, boolean generate
       return this.skinUuid != null ? this.skinUuid : this.y();
    }
 
-   public class11991(String name, UUID skinUuid, boolean generated) {
-      super();
-      this.name = name;
-      this.skinUuid = skinUuid;
-      this.generated = generated;
-   }
 
    @Override
    public boolean equals(Object var1) {

@@ -5,15 +5,6 @@ public record class09902(String text, float x, float y, int color, float fontSiz
       return this.y;
    }
 
-   public class09902(String text, float x, float y, int color, float fontSize, class09838 fontSpec) {
-      super();
-      this.text = text;
-      this.x = x;
-      this.y = y;
-      this.color = color;
-      this.fontSize = fontSize;
-      this.fontSpec = fontSpec;
-   }
 
    public float i() {
       return this.fontSize;

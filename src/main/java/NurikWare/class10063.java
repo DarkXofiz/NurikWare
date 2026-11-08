@@ -5,13 +5,6 @@ record class10063(float width, float height, float minWidth, float minHeight) {
       return this.minWidth;
    }
 
-   class10063(float width, float height, float minWidth, float minHeight) {
-      super();
-      this.width = width;
-      this.height = height;
-      this.minWidth = minWidth;
-      this.minHeight = minHeight;
-   }
 
    public float u() {
       return this.minHeight;

@@ -9,16 +9,6 @@ record class09727(int x, int y, int paddedWidth, int paddedHeight, int newHeight
       return this.appended;
    }
 
-   class09727(int x, int y, int paddedWidth, int paddedHeight, int newHeight, int newRowHeight, boolean appended) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.paddedWidth = paddedWidth;
-      this.paddedHeight = paddedHeight;
-      this.newHeight = newHeight;
-      this.newRowHeight = newRowHeight;
-      this.appended = appended;
-   }
 
    public int i() {
       return this.newHeight;

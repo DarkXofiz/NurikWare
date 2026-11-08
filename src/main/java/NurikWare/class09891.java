@@ -5,14 +5,6 @@ public record class09891(class09938 renderer, float x, float y, float width, flo
       return this.y;
    }
 
-   public class09891(class09938 renderer, float x, float y, float width, float height) {
-      super();
-      this.renderer = renderer;
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-   }
 
    public float i() {
       return this.height;

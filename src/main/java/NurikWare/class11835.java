@@ -9,13 +9,6 @@ public record class11835(List<? extends class11535> entries, class11535 selected
       return this.entries;
    }
 
-   public class11835(List<? extends class11535> entries, class11535 selected, class09785<Boolean> opened, Consumer<class11535> onSelect) {
-      super();
-      this.entries = entries;
-      this.selected = selected;
-      this.opened = opened;
-      this.onSelect = onSelect;
-   }
 
    public class09785<Boolean> u() {
       return this.opened;

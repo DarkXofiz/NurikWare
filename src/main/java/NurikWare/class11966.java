@@ -1,6 +1,6 @@
 package NurikWare;
 
-public enum class11966 {
+public final class class11966 {
    private static String[] strings_0090476987a34349fa0f33a04d59e77da;
    public static class11966 staticFields_0090476987a34349fa0f33a04d59e77da_0 = new class11966();
    public static class11966 staticFields_0090476987a34349fa0f33a04d59e77da_1 = new class11966();

@@ -16,10 +16,6 @@ public record class09825(Reference2ObjectMap<class02477<?>, Object> map) impleme
       return (T)this.map.get(var1);
    }
 
-   public class09825(Reference2ObjectMap<class02477<?>, Object> map) {
-      super();
-      this.map = map;
-   }
 
    @Override
    public String toString() {

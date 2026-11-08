@@ -9,14 +9,6 @@ public record class11858(String placeholderKey, String value, Pattern regex, Con
       return this.focused;
    }
 
-   public class11858(String placeholderKey, String value, Pattern regex, Consumer<String> onChange, class09785<Boolean> focused) {
-      super();
-      this.placeholderKey = placeholderKey;
-      this.value = value;
-      this.regex = regex;
-      this.onChange = onChange;
-      this.focused = focused;
-   }
 
    public String i() {
       return this.value;

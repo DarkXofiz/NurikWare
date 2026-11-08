@@ -12,14 +12,6 @@ public record class11436(String host, int port, String path, boolean sslEnabled,
       return this.host;
    }
 
-   public class11436(String host, int port, String path, boolean sslEnabled, long reconnectAfterMs) {
-      super();
-      this.host = host;
-      this.port = port;
-      this.path = path;
-      this.sslEnabled = sslEnabled;
-      this.reconnectAfterMs = reconnectAfterMs;
-   }
 
    public boolean i() {
       return this.sslEnabled;

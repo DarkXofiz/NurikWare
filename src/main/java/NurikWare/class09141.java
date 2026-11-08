@@ -20,28 +20,6 @@ public record class09141(
       return this.pitchMultiplier;
    }
 
-   public class09141(
-      boolean active,
-      float yawMultiplier,
-      float pitchMultiplier,
-      float acceleration,
-      float yawShare,
-      float pitchShare,
-      float yawOffset,
-      float pitchOffset,
-      boolean angularOffset
-   ) {
-      super();
-      this.active = active;
-      this.yawMultiplier = yawMultiplier;
-      this.pitchMultiplier = pitchMultiplier;
-      this.acceleration = acceleration;
-      this.yawShare = yawShare;
-      this.pitchShare = pitchShare;
-      this.yawOffset = yawOffset;
-      this.pitchOffset = pitchOffset;
-      this.angularOffset = angularOffset;
-   }
 
    public float B() {
       return this.pitchShare;

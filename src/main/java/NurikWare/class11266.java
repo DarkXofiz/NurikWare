@@ -12,13 +12,6 @@ public record class11266(class06889 origin, class06889 velocity, class11228 enti
       this(var1, var2, var3, 0.0F);
    }
 
-   public class11266(class06889 origin, class06889 velocity, class11228 entityPrediction, float landingRadius) {
-      super();
-      this.origin = origin;
-      this.velocity = velocity;
-      this.entityPrediction = entityPrediction;
-      this.landingRadius = landingRadius;
-   }
 
    public class06889 i() {
       return this.origin;

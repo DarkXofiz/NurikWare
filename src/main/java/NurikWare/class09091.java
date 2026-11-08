@@ -10,19 +10,6 @@ public record class09091(int glTextureId, float u0, float v0, float u1, float v1
       return this.glTextureId;
    }
 
-   public class09091(int glTextureId, float u0, float v0, float u1, float v1, float minX, float maxX, float minY, float maxY, float advance) {
-      super();
-      this.glTextureId = glTextureId;
-      this.u0 = u0;
-      this.v0 = v0;
-      this.u1 = u1;
-      this.v1 = v1;
-      this.minX = minX;
-      this.maxX = maxX;
-      this.minY = minY;
-      this.maxY = maxY;
-      this.advance = advance;
-   }
 
    public float B() {
       return this.advance;

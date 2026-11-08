@@ -4,11 +4,6 @@ import java.util.Objects;
 
 public record class11043(class10401 entity, int removedTick) {
 
-   class11043(class10401 entity, int removedTick) {
-      super();
-      this.entity = entity;
-      this.removedTick = removedTick;
-   }
 
    @Override
    public boolean equals(Object var1) {

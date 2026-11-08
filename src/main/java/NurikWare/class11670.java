@@ -6,12 +6,6 @@ public record class11670(String token, String hash, String xuid) {
       return this.xuid;
    }
 
-   class11670(String token, String hash, String xuid) {
-      super();
-      this.token = token;
-      this.hash = hash;
-      this.xuid = xuid;
-   }
 
    public String y() {
       return this.token;

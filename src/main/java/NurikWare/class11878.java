@@ -10,12 +10,6 @@ public record class11878(String avatarRef, String username, long subscribeMinute
       return this.username;
    }
 
-   public class11878(String avatarRef, String username, long subscribeMinutes) {
-      super();
-      this.avatarRef = avatarRef;
-      this.username = username;
-      this.subscribeMinutes = subscribeMinutes;
-   }
 
    public String u() {
       return this.avatarRef;

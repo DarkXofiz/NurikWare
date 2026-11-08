@@ -9,15 +9,6 @@ record class09722(int x, int y, int width, int height, int paddedWidth, int padd
       return this.y + this.height;
    }
 
-   class09722(int x, int y, int width, int height, int paddedWidth, int paddedHeight) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-      this.paddedWidth = paddedWidth;
-      this.paddedHeight = paddedHeight;
-   }
 
    int B() {
       return this.y + this.paddedHeight;

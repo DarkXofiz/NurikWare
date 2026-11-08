@@ -6,15 +6,6 @@ public record class11768(String text, String family, class09079 weight, boolean 
       return this.weight;
    }
 
-   class11768(String text, String family, class09079 weight, boolean italic, float fontSize, float uiScale) {
-      super();
-      this.text = text;
-      this.family = family;
-      this.weight = weight;
-      this.italic = italic;
-      this.fontSize = fontSize;
-      this.uiScale = uiScale;
-   }
 
    public float i() {
       return this.uiScale;

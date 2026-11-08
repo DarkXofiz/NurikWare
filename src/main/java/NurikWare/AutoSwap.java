@@ -61,13 +61,13 @@ public class AutoSwap extends class11067 {
       this.u_0 = class11524.N(this, "swap-key", class12002.UNKNOWN);
       this.u_1 = new class11703(this, "multi", false);
       this.i_0 = class11524.N(this, "mode", new class11687(this, "default", true), (class11703)this.u_1);
-      this.i_1 = (Supplier<>)() -> new class11679("shield", true, class11328.N(class06570.lo));
-      this.i_2 = (Supplier<>)() -> new class11679("g-apples", false, class11328.N(class06570.bV));
-      this.R_0 = (Supplier<>)() -> new class11679("any-food", false, class11929::U);
-      this.R_1 = (Supplier<>)() -> new class11679("totem", false, class11328.N(class06570.la));
-      this.R_2 = (Supplier<>)() -> new class11679("fireworks", false, class11328.N(class06570.GJ));
-      this.R_3 = (Supplier<>)() -> new class11679("sunrise-runes", false, var0 -> (var0.B() == class06570.Go || var0.B() == class06570.lG) && var0.I());
-      this.R_4 = (Supplier<>)() -> new class11679(
+      this.i_1 = () -> new class11679("shield", true, class11328.N(class06570.lo));
+      this.i_2 = () -> new class11679("g-apples", false, class11328.N(class06570.bV));
+      this.R_0 = () -> new class11679("any-food", false, class11929::U);
+      this.R_1 = () -> new class11679("totem", false, class11328.N(class06570.la));
+      this.R_2 = () -> new class11679("fireworks", false, class11328.N(class06570.GJ));
+      this.R_3 = () -> new class11679("sunrise-runes", false, var0 -> (var0.B() == class06570.Go || var0.B() == class06570.lG) && var0.I());
+      this.R_4 = () -> new class11679(
          "sphere", false, var0 -> var0.B() == class06570.Gw && (var0.y().N(class02484.b) || class11929.N(var0, "sphereEffect"))
       );
       this.R_5 = (class11517)class11524.N(

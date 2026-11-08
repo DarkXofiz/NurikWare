@@ -2,10 +2,6 @@ package NurikWare;
 
 public record class11364(class09378 kind) {
 
-   public class11364(class09378 kind) {
-      super();
-      this.kind = kind;
-   }
 
    public static class11364 N(class09378 var0) {
       return new class11364(var0);

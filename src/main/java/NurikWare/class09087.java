@@ -14,10 +14,6 @@ public record class09087(class09069... attrs) {
       return i;
    }
 
-   public class09087(class09069... attrs) {
-      super();
-      this.attrs = attrs;
-   }
 
    public void y() {
       int i = this.L();

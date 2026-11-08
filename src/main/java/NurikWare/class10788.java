@@ -8,13 +8,6 @@ public record class10788(class03556<class02195> type, byte x, byte y, byte rot) 
       return this.y;
    }
 
-   public class10788(class03556<class02195> type, byte x, byte y, byte rot) {
-      super();
-      this.type = type;
-      this.x = x;
-      this.y = y;
-      this.rot = rot;
-   }
 
    public byte u() {
       return this.rot;

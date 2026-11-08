@@ -9,14 +9,6 @@ public record class11851(List<? extends class11535> entries, class09785<Boolean>
       return this.width;
    }
 
-   public class11851(List<? extends class11535> entries, class09785<Boolean> opened, Consumer<class11535> onSelect, Float width, float anchorOffsetX) {
-      super();
-      this.entries = entries;
-      this.opened = opened;
-      this.onSelect = onSelect;
-      this.width = width;
-      this.anchorOffsetX = anchorOffsetX;
-   }
 
    public class11851(List<? extends class11535> var1, class09785<Boolean> var2, Consumer<class11535> var3) {
       this(var1, var2, var3, null, -8.0F);

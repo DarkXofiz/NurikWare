@@ -21,13 +21,6 @@ public record class09962(class09982 mode, float min, float max, float value) {
       return this.value;
    }
 
-   public class09962(class09982 mode, float min, float max, float value) {
-      super();
-      this.mode = mode;
-      this.min = min;
-      this.max = max;
-      this.value = value;
-   }
 
    private static float B(float var0) {
       return Float.isInfinite(var0) ? Float.POSITIVE_INFINITY : Math.max(0.0F, var0);

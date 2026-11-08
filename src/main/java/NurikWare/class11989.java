@@ -8,12 +8,6 @@ public record class11989(class11951<?> packet, class11959 requiredState, Channel
       return this.listener;
    }
 
-   public class11989(class11951<?> packet, class11959 requiredState, ChannelFutureListener listener) {
-      super();
-      this.packet = packet;
-      this.requiredState = requiredState;
-      this.listener = listener;
-   }
 
    public class11959 y() {
       return this.requiredState;

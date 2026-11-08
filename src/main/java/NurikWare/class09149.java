@@ -6,13 +6,6 @@ public record class09149(class11499 rotation, float yawSpeed, float pitchSpeed, 
       return this.rotation;
    }
 
-   public class09149(class11499 rotation, float yawSpeed, float pitchSpeed, boolean active) {
-      super();
-      this.rotation = rotation;
-      this.yawSpeed = yawSpeed;
-      this.pitchSpeed = pitchSpeed;
-      this.active = active;
-   }
 
    public boolean u() {
       return this.active;

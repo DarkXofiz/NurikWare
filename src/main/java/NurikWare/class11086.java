@@ -6,13 +6,6 @@ public record class11086(boolean active, float yawOffset, float pitchOffset, boo
       return this.releaseAim;
    }
 
-   public class11086(boolean active, float yawOffset, float pitchOffset, boolean releaseAim) {
-      super();
-      this.active = active;
-      this.yawOffset = yawOffset;
-      this.pitchOffset = pitchOffset;
-      this.releaseAim = releaseAim;
-   }
 
    public float i() {
       return this.pitchOffset;

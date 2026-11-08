@@ -7,13 +7,6 @@ public record class09689(float u0, float v0, float u1, float v1) {
       return this.v0;
    }
 
-   public class09689(float u0, float v0, float u1, float v1) {
-      super();
-      this.u0 = u0;
-      this.v0 = v0;
-      this.u1 = u1;
-      this.v1 = v1;
-   }
 
    public float i() {
       return this.v1;

@@ -3,10 +3,6 @@ package NurikWare;
 import java.util.Map;
 
 record class09748(Map<Long, Integer> pairs) implements class09729 {
-   class09748(Map<Long, Integer> pairs) {
-      super();
-      this.pairs = pairs;
-   }
 
    @Override
    public int N(int var1, int var2) {

@@ -8,13 +8,6 @@ public record class11104(class06889 point, class11499 rotation, boolean released
       return this.rotation;
    }
 
-   public class11104(class06889 point, class11499 rotation, boolean released, boolean flicking) {
-      super();
-      this.point = point;
-      this.rotation = rotation;
-      this.released = released;
-      this.flicking = flicking;
-   }
 
    public class06889 u() {
       return this.point;

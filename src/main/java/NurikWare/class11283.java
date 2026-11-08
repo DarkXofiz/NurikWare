@@ -6,11 +6,6 @@ public record class11283(class11301 kind, class09378 configKind) {
       return this.configKind;
    }
 
-   public class11283(class11301 kind, class09378 configKind) {
-      super();
-      this.kind = kind;
-      this.configKind = configKind;
-   }
 
    public class11301 y() {
       return this.kind;

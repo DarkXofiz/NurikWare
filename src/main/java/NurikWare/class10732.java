@@ -6,11 +6,6 @@ public record class10732(int kindId, long updatedAt) {
       return this.kindId;
    }
 
-   public class10732(int kindId, long updatedAt) {
-      super();
-      this.kindId = kindId;
-      this.updatedAt = updatedAt;
-   }
 
    public static class10732 y(class11940 var0) {
       return new class10732(var0.R(), var0.M());

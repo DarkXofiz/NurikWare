@@ -8,12 +8,6 @@ public record class11961(Supplier<? extends class11951<?>> supplier, int since, 
       return this.untilExclusive;
    }
 
-   class11961(Supplier<? extends class11951<?>> supplier, int since, int untilExclusive) {
-      super();
-      this.supplier = supplier;
-      this.since = since;
-      this.untilExclusive = untilExclusive;
-   }
 
    public int y() {
       return this.since;

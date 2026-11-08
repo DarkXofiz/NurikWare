@@ -1,17 +1,11 @@
 package NurikWare;
 
-public non-sealed record class09275(int kindId, long updatedAt, byte[] data) implements class09260 {
+public record class09275(int kindId, long updatedAt, byte[] data) implements class09260 {
 
    public long L() {
       return this.updatedAt;
    }
 
-   public class09275(int kindId, long updatedAt, byte[] data) {
-      super();
-      this.kindId = kindId;
-      this.updatedAt = updatedAt;
-      this.data = data;
-   }
 
    public static class09275 y(class11940 var0) {
       return new class09275(var0.R(), var0.M(), var0.u(262144));

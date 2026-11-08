@@ -1,12 +1,7 @@
 package NurikWare;
 
-public non-sealed record class11969(int kindId, byte[] data) implements class11981 {
+public record class11969(int kindId, byte[] data) implements class11981 {
 
-   public class11969(int kindId, byte[] data) {
-      super();
-      this.kindId = kindId;
-      this.data = data;
-   }
 
    public static class11969 y(class11940 var0) {
       return new class11969(var0.R(), var0.u(262144));

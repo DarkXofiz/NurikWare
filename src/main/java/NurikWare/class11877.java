@@ -8,10 +8,6 @@ public record class11877(String icon) implements class11849 {
       N_0 = 16;
    }
 
-   public class11877(String icon) {
-      super();
-      this.icon = icon;
-   }
 
    static {
       y();

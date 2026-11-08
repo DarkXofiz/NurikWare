@@ -5,12 +5,6 @@ public record class09998(class09979 state, class09992 slot, class10002 patch) {
       return this.patch;
    }
 
-   public class09998(class09979 state, class09992 slot, class10002 patch) {
-      super();
-      this.state = state;
-      this.slot = slot;
-      this.patch = patch;
-   }
 
    public class09992 y() {
       return this.slot;

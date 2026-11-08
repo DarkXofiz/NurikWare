@@ -5,12 +5,6 @@ public record class09791(int maxDepth, String subtreeKey, boolean fullStyle) {
       return this.subtreeKey;
    }
 
-   public class09791(int maxDepth, String subtreeKey, boolean fullStyle) {
-      super();
-      this.maxDepth = maxDepth;
-      this.subtreeKey = subtreeKey;
-      this.fullStyle = fullStyle;
-   }
 
    public boolean u() {
       return this.fullStyle;

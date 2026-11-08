@@ -4,11 +4,6 @@ import java.util.Objects;
 
 public record class09332(String name, long creationDate) {
 
-   public class09332(String name, long creationDate) {
-      super();
-      this.name = name;
-      this.creationDate = creationDate;
-   }
 
    @Override
    public boolean equals(Object var1) {

@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 record class09874(List<String> segments) {
-   class09874(List<String> segments) {
-      super();
-      this.segments = segments;
-   }
 
    @Override
    public String toString() {

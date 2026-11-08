@@ -8,12 +8,6 @@ public record class11114(class06584 itemStack, String seller, long price) {
       return this.seller;
    }
 
-   class11114(class06584 itemStack, String seller, long price) {
-      super();
-      this.itemStack = itemStack;
-      this.seller = seller;
-      this.price = price;
-   }
 
    public class06584 y() {
       return this.itemStack;

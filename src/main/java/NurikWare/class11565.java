@@ -15,12 +15,6 @@ public record class11565(String name, int durationTicks, class00891... blocks) i
       this(var1, 300, var2);
    }
 
-   public class11565(String name, int durationTicks, class00891... blocks) {
-      super();
-      this.name = name;
-      this.durationTicks = durationTicks;
-      this.blocks = blocks;
-   }
 
    @Override
    public int y() {

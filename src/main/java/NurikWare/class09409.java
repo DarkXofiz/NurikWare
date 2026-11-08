@@ -3,11 +3,6 @@ package NurikWare;
 import minecraft.class00494;
 
 public record class09409(class00494 first, class00494 second) {
-   public class09409(class00494 first, class00494 second) {
-      super();
-      this.first = first;
-      this.second = second;
-   }
 
    @Override
    public boolean equals(Object var1) {

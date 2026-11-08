@@ -9,11 +9,6 @@ public record class11343(boolean passed, String failedCheck) {
       i[0] = 2;
    }
 
-   private class11343(boolean passed, String failedCheck) {
-      super();
-      this.passed = passed;
-      this.failedCheck = failedCheck;
-   }
 
    static {
       L();

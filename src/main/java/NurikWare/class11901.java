@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Optional;
 
-public enum class11901 {
+public final class class11901 {
    public static Object[] staticFields_0ec612a2dc0263a258b66e8d510834aaf;
    private static String[] strings_0ec612a2dc0263a258b66e8d510834aaf;
    private static byte[] bytes_1ec612a2dc0263a258b66e8d510834aaf;

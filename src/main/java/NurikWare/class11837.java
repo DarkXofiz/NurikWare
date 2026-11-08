@@ -10,14 +10,6 @@ public record class11837(String iconPath, int iconColor, String text, Runnable o
       this(var1, var2, var3, var4, false);
    }
 
-   public class11837(String iconPath, int iconColor, String text, Runnable onClick, boolean disabled) {
-      super();
-      this.iconPath = iconPath;
-      this.iconColor = iconColor;
-      this.text = text;
-      this.onClick = onClick;
-      this.disabled = disabled;
-   }
 
    public class11837(String var1, int var2, Runnable var3) {
       this(var1, var2, null, var3, false);

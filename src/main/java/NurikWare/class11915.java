@@ -12,19 +12,6 @@ public record class11915(
       return this.sneaking;
    }
 
-   public class11915(
-      boolean sneaking, boolean sprinting, boolean jumping, boolean water, boolean ground, double fallDistance, int jumpingCooldown, class11781 clientEntity
-   ) {
-      super();
-      this.sneaking = sneaking;
-      this.sprinting = sprinting;
-      this.jumping = jumping;
-      this.water = water;
-      this.ground = ground;
-      this.fallDistance = fallDistance;
-      this.jumpingCooldown = jumpingCooldown;
-      this.clientEntity = clientEntity;
-   }
 
    public boolean B() {
       return this.ground;

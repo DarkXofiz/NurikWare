@@ -7,12 +7,6 @@ public record class09876(boolean capture, boolean once, boolean passive) {
       return new class09876(false, false, true);
    }
 
-   public class09876(boolean capture, boolean once, boolean passive) {
-      super();
-      this.capture = capture;
-      this.once = once;
-      this.passive = passive;
-   }
 
    public boolean i() {
       return this.once;

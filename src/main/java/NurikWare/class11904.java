@@ -12,16 +12,6 @@ public record class11904(GpuTextureView texture, float[] positions, float[] uvs,
       return this.positions;
    }
 
-   public class11904(GpuTextureView texture, float[] positions, float[] uvs, int[] colors, float[] lights, float[] normals, int[] indices) {
-      super();
-      this.texture = texture;
-      this.positions = positions;
-      this.uvs = uvs;
-      this.colors = colors;
-      this.lights = lights;
-      this.normals = normals;
-      this.indices = indices;
-   }
 
    public GpuTextureView i() {
       return this.texture;

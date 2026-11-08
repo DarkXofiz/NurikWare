@@ -1,6 +1,6 @@
 package NurikWare;
 
-public enum class11909 {
+public final class class11909 {
    private static String[] strings_0d98e95695d6732fd9192964e161ca232;
    public String fields_0d98e95695d6732fd9192964e161ca232_0;
    public static class11909 staticFields_0d98e95695d6732fd9192964e161ca232_0 = new class11909(strings_0d98e95695d6732fd9192964e161ca232[1]);

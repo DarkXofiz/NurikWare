@@ -6,12 +6,6 @@ public record class09123(class11499 rotation, float yawSpeed, float pitchSpeed) 
       return this.pitchSpeed;
    }
 
-   public class09123(class11499 rotation, float yawSpeed, float pitchSpeed) {
-      super();
-      this.rotation = rotation;
-      this.yawSpeed = yawSpeed;
-      this.pitchSpeed = pitchSpeed;
-   }
 
    public class11499 y() {
       return this.rotation;

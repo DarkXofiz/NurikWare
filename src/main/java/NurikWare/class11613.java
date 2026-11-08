@@ -23,26 +23,6 @@ public record class11613(
       return this.ref;
    }
 
-   public class11613(
-      String id,
-      class09793<class09904> ref,
-      class09991 style,
-      class09785<Vector2f> position,
-      class09785<Boolean> dragging,
-      class09785<Vector2f> dragOffset,
-      class11598<? super class11613> behavior,
-      BiConsumer<class09784, class09809> content
-   ) {
-      super();
-      this.id = id;
-      this.ref = ref;
-      this.style = style;
-      this.position = position;
-      this.dragging = dragging;
-      this.dragOffset = dragOffset;
-      this.behavior = behavior;
-      this.content = content;
-   }
 
    public BiConsumer<class09784, class09809> B() {
       return this.content;

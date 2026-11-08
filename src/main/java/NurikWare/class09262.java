@@ -1,11 +1,7 @@
 package NurikWare;
 
-public non-sealed record class09262(long presetId) implements class11942 {
+public record class09262(long presetId) implements class11942 {
 
-   public class09262(long presetId) {
-      super();
-      this.presetId = presetId;
-   }
 
    public static class09262 y(class11940 var0) {
       return new class09262(var0.M());

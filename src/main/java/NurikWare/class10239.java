@@ -12,11 +12,6 @@ public record class10239(class05946<class01255> key, class01255 value) {
       return this.value;
    }
 
-   public class10239(class05946<class01255> key, class01255 value) {
-      super();
-      this.key = key;
-      this.value = value;
-   }
 
    public class05946<class01255> y() {
       return this.key;

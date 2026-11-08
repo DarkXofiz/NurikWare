@@ -20,11 +20,6 @@ public record class11408(class11405 client, class11410 connection) implements cl
       return this.client;
    }
 
-   public class11408(class11405 client, class11410 connection) {
-      super();
-      this.client = client;
-      this.connection = connection;
-   }
 
    static {
       Z();

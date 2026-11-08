@@ -1,17 +1,11 @@
 package NurikWare;
 
-public non-sealed record class11941(long id, int formatVersion, byte[] data) implements class11946 {
+public record class11941(long id, int formatVersion, byte[] data) implements class11946 {
 
    public long L() {
       return this.id;
    }
 
-   public class11941(long id, int formatVersion, byte[] data) {
-      super();
-      this.id = id;
-      this.formatVersion = formatVersion;
-      this.data = data;
-   }
 
    public byte[] y() {
       return this.data;

@@ -18,18 +18,6 @@ public record class12006(
       return this.modifiedStacks;
    }
 
-   public class12006(
-      int syncId, int revision, short slot, byte button, class07510 actionType, class00176 itemStackHash, Int2ObjectMap<class00176> modifiedStacks
-   ) {
-      super();
-      this.syncId = syncId;
-      this.revision = revision;
-      this.slot = slot;
-      this.button = button;
-      this.actionType = actionType;
-      this.itemStackHash = itemStackHash;
-      this.modifiedStacks = modifiedStacks;
-   }
 
    public class00176 i() {
       return this.itemStackHash;

@@ -4,10 +4,6 @@ import minecraft.class04489;
 import minecraft.class05946;
 
 public record class10415(class05946<?> id) implements class04489 {
-   public class10415(class05946<?> id) {
-      super();
-      this.id = id;
-   }
 
    public String get() {
       return "{" + this.id.N() + "@" + this.id.y() + "}";

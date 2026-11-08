@@ -5,13 +5,6 @@ record class09850(boolean shouldRunFullLayout, boolean shouldRunPositionUpdate, 
       return this.hasScrollDirty;
    }
 
-   class09850(boolean shouldRunFullLayout, boolean shouldRunPositionUpdate, boolean hasScrollDirty, boolean viewportChanged) {
-      super();
-      this.shouldRunFullLayout = shouldRunFullLayout;
-      this.shouldRunPositionUpdate = shouldRunPositionUpdate;
-      this.hasScrollDirty = hasScrollDirty;
-      this.viewportChanged = viewportChanged;
-   }
 
    public boolean u() {
       return this.viewportChanged;

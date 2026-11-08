@@ -5,13 +5,6 @@ public record class09916(float x, float y, float width, float height) {
       return this.y;
    }
 
-   public class09916(float x, float y, float width, float height) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-   }
 
    public float i() {
       return this.height;

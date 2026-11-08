@@ -8,12 +8,6 @@ public record class11997(String name, String text, int key) {
       return this.name;
    }
 
-   public class11997(String name, String text, int key) {
-      super();
-      this.name = name;
-      this.text = text;
-      this.key = key;
-   }
 
    @Override
    public boolean equals(Object var1) {

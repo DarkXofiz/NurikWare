@@ -7,13 +7,6 @@ public record class09985(float left, float right, float top, float bottom) {
       return this.left;
    }
 
-   public class09985(float left, float right, float top, float bottom) {
-      super();
-      this.left = left;
-      this.right = right;
-      this.top = top;
-      this.bottom = bottom;
-   }
 
    public float i() {
       return this.top;

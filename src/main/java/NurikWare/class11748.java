@@ -35,8 +35,6 @@ public class class11748 {
       N();
       u();
       y();
-      (Integer)u_1;
-      (Integer)u_1;
       class09991 class09991 = class09991.N();
       N_7 = class09991.N(class09991.i((Integer)class09181.N_0).N(1.5F, -1778384896), class09221.N(12, class09079.REGULAR));
    }

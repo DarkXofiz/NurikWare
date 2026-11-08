@@ -1,10 +1,6 @@
 package NurikWare;
 
 record class09732(int[] glyphs) {
-   class09732(int[] glyphs) {
-      super();
-      this.glyphs = glyphs;
-   }
 
    boolean N(int var1) {
       int i = 0;

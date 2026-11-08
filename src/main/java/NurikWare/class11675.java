@@ -8,12 +8,6 @@ public record class11675(String name, String password, String lastLogin) {
       return this.name;
    }
 
-   public class11675(String name, String password, String lastLogin) {
-      super();
-      this.name = name;
-      this.password = password;
-      this.lastLogin = lastLogin;
-   }
 
    @SerializedName("password")
    public String y() {

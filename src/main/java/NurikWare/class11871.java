@@ -15,15 +15,6 @@ public record class11871(
       return this.increment;
    }
 
-   public class11871(class11494 value, class11494 minMax, float increment, Supplier<String> postfix, Consumer<class11494> onChange, class09785<Boolean> wasMove) {
-      super();
-      this.value = value;
-      this.minMax = minMax;
-      this.increment = increment;
-      this.postfix = postfix;
-      this.onChange = onChange;
-      this.wasMove = wasMove;
-   }
 
    public class11494 B() {
       return this.value;

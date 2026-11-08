@@ -17,26 +17,6 @@ public record class10456(
    Date buildTime,
    boolean stable
 ) implements class04551 {
-   public class10456(
-      String id,
-      String name,
-      class01829 dataVersion,
-      int protocolVersion,
-      class08735 resourcePackVersion,
-      class08735 datapackVersion,
-      Date buildTime,
-      boolean stable
-   ) {
-      super();
-      this.id = id;
-      this.name = name;
-      this.dataVersion = dataVersion;
-      this.protocolVersion = protocolVersion;
-      this.resourcePackVersion = resourcePackVersion;
-      this.datapackVersion = datapackVersion;
-      this.buildTime = buildTime;
-      this.stable = stable;
-   }
 
    public class08735 y() {
       return this.datapackVersion;

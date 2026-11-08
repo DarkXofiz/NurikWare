@@ -3,7 +3,7 @@ package NurikWare;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum class11790 {
+public final class class11790 {
    private static String[] strings_0e32a81813f643834bbda8f07cef7f07f;
    private static String[] strings_2e32a81813f643834bbda8f07cef7f07f;
    private static String[] strings_3e32a81813f643834bbda8f07cef7f07f;

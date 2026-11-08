@@ -8,11 +8,6 @@ public record class11323(class11298 kind, UUID clientId) {
       return new class11323(class11298.UPDATE, var0);
    }
 
-   public class11323(class11298 kind, UUID clientId) {
-      super();
-      this.kind = kind;
-      this.clientId = clientId;
-   }
 
    public static class11323 i(UUID var0) {
       return new class11323(class11298.RENAME, var0);

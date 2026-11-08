@@ -10,13 +10,6 @@ public record class11635(List<Vector4f> rects, List<Vector4f> rounds, Optional<c
       return this.currentMask;
    }
 
-   public class11635(List<Vector4f> rects, List<Vector4f> rounds, Optional<class11599> currentMask, Optional<class11599> effectiveMask) {
-      super();
-      this.rects = rects;
-      this.rounds = rounds;
-      this.currentMask = currentMask;
-      this.effectiveMask = effectiveMask;
-   }
 
    static class11635 i() {
       return new class11635(List.of(), List.of(), Optional.empty(), Optional.empty());

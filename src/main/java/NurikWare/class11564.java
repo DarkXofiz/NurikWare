@@ -4,11 +4,6 @@ import minecraft.class06937;
 
 public record class11564(class06937 slot, long cost) {
 
-   public class11564(class06937 slot, long cost) {
-      super();
-      this.slot = slot;
-      this.cost = cost;
-   }
 
    @Override
    public boolean equals(Object var1) {

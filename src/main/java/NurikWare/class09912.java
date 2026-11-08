@@ -9,16 +9,6 @@ public record class09912(float x, float y, float width, float height, int target
       return this.uiScale;
    }
 
-   public class09912(float x, float y, float width, float height, int targetWidth, int targetHeight, float uiScale) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-      this.targetWidth = targetWidth;
-      this.targetHeight = targetHeight;
-      this.uiScale = uiScale;
-   }
 
    public int i() {
       return this.targetWidth;

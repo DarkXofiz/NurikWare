@@ -14,19 +14,6 @@ public record class11789(
       return this.createdAtMillis;
    }
 
-   public class11789(
-      long presetId, UUID presetClientId, byte[] token, long expiresAtMillis, int activationLimit, int activationCount, long createdAtMillis, boolean stale
-   ) {
-      super();
-      this.presetId = presetId;
-      this.presetClientId = presetClientId;
-      this.token = token;
-      this.expiresAtMillis = expiresAtMillis;
-      this.activationLimit = activationLimit;
-      this.activationCount = activationCount;
-      this.createdAtMillis = createdAtMillis;
-      this.stale = stale;
-   }
 
    public long B() {
       return this.presetId;

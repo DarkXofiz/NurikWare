@@ -19,14 +19,6 @@ public record class12012(boolean enabled, int srcRGB, int dstRGB, int srcA, int 
       R_3 = null;
    }
 
-   public class12012(boolean enabled, int srcRGB, int dstRGB, int srcA, int dstA) {
-      super();
-      this.enabled = enabled;
-      this.srcRGB = srcRGB;
-      this.dstRGB = dstRGB;
-      this.srcA = srcA;
-      this.dstA = dstA;
-   }
 
    static {
       M();

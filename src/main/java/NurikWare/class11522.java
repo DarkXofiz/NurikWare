@@ -1,6 +1,6 @@
 package NurikWare;
 
-public enum class11522 {
+public final class class11522 {
    private static String[] strings_05ffa7eec8dd73e94b3c68970de658457;
    public Integer fields_05ffa7eec8dd73e94b3c68970de658457_0;
    public boolean fields_05ffa7eec8dd73e94b3c68970de658457_init;

@@ -2,18 +2,12 @@ package NurikWare;
 
 import java.util.UUID;
 
-public non-sealed record class09281(long id, UUID clientId, int errorCode) implements class09279 {
+public record class09281(long id, UUID clientId, int errorCode) implements class09279 {
 
    public int L() {
       return this.errorCode;
    }
 
-   public class09281(long id, UUID clientId, int errorCode) {
-      super();
-      this.id = id;
-      this.clientId = clientId;
-      this.errorCode = errorCode;
-   }
 
    @Override
    public void y(class11940 var1) {

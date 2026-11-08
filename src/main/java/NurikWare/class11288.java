@@ -14,10 +14,6 @@ public record class11288(class11067 module) implements class11287 {
       y[0] = " ⇨ ";
    }
 
-   public class11288(class11067 module) {
-      super();
-      this.module = module;
-   }
 
    static {
       L();

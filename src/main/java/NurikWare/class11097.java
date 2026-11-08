@@ -22,32 +22,6 @@ public record class11097(
       return this.detachedAim;
    }
 
-   public class11097(
-      class11499 rotation,
-      boolean currentHardRaycast,
-      boolean serverHardRaycast,
-      boolean urgentCatchup,
-      boolean holdPitch,
-      boolean detachedAim,
-      boolean overshootAim,
-      boolean pullbackFlick,
-      float yawError,
-      float pitchError,
-      double distance
-   ) {
-      super();
-      this.rotation = rotation;
-      this.currentHardRaycast = currentHardRaycast;
-      this.serverHardRaycast = serverHardRaycast;
-      this.urgentCatchup = urgentCatchup;
-      this.holdPitch = holdPitch;
-      this.detachedAim = detachedAim;
-      this.overshootAim = overshootAim;
-      this.pullbackFlick = pullbackFlick;
-      this.yawError = yawError;
-      this.pitchError = pitchError;
-      this.distance = distance;
-   }
 
    public boolean B() {
       return this.pullbackFlick;

@@ -8,15 +8,6 @@ public record class11827(long id, UUID clientId, String name, String creator, lo
       return this.name;
    }
 
-   public class11827(long id, UUID clientId, String name, String creator, long lastUpdate, long rowVersion) {
-      super();
-      this.id = id;
-      this.clientId = clientId;
-      this.name = name;
-      this.creator = creator;
-      this.lastUpdate = lastUpdate;
-      this.rowVersion = rowVersion;
-   }
 
    public long i() {
       return this.rowVersion;

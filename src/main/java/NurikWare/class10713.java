@@ -13,12 +13,6 @@ public record class10713(class06889 from, class06889 to, Optional<class06889> ax
       this(var1, var2, Optional.of(var3));
    }
 
-   public class10713(class06889 from, class06889 to, Optional<class06889> axisDependentOriginalMovement) {
-      super();
-      this.from = from;
-      this.to = to;
-      this.axisDependentOriginalMovement = axisDependentOriginalMovement;
-   }
 
    public class10713(class06889 var1, class06889 var2) {
       this(var1, var2, Optional.empty());

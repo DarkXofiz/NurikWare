@@ -6,13 +6,6 @@ public record class11853(String label, boolean active, Runnable onClick, class11
       return this.label;
    }
 
-   public class11853(String label, boolean active, Runnable onClick, class11856 segment) {
-      super();
-      this.label = label;
-      this.active = active;
-      this.onClick = onClick;
-      this.segment = segment;
-   }
 
    public boolean u() {
       return this.active;

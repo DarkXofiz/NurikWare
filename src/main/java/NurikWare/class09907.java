@@ -11,16 +11,6 @@ public record class09907(float x, float y, float width, float height, float blur
       return this.borderRadius;
    }
 
-   public class09907(float x, float y, float width, float height, float blurRadius, int color, Vector4fc borderRadius) {
-      super();
-      this.x = x;
-      this.y = y;
-      this.width = width;
-      this.height = height;
-      this.blurRadius = blurRadius;
-      this.color = color;
-      this.borderRadius = borderRadius;
-   }
 
    public float i() {
       return this.blurRadius;

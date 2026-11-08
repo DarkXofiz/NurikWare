@@ -21,7 +21,7 @@ public class class11525 extends class11536<class11494> {
    public class11525(class12018 var1, class11494 var2, class11494 var3, float var4) {
       super(var1, N(var2, var3));
       this.v();
-      this.N_2 = (Supplier<>)() -> "";
+      this.N_2 = () -> "";
       var2.y();
       this.N_0 = var2;
       this.N_1 = var4;

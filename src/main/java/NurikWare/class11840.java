@@ -13,14 +13,6 @@ public record class11840(List<? extends class11535> entries, class09785<Boolean>
       this(var1, var2, var3, null, -8.0F);
    }
 
-   public class11840(List<? extends class11535> entries, class09785<Boolean> opened, Consumer<class11535> onToggle, Float width, float anchorOffsetX) {
-      super();
-      this.entries = entries;
-      this.opened = opened;
-      this.onToggle = onToggle;
-      this.width = width;
-      this.anchorOffsetX = anchorOffsetX;
-   }
 
    public Consumer<class11535> i() {
       return this.onToggle;

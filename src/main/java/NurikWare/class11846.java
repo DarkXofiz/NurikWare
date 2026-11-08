@@ -6,12 +6,6 @@ public record class11846(class11067 module, String description, String anchorKey
       return this.module;
    }
 
-   public class11846(class11067 module, String description, String anchorKey) {
-      super();
-      this.module = module;
-      this.description = description;
-      this.anchorKey = anchorKey;
-   }
 
    public String y() {
       return this.description;

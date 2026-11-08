@@ -5,13 +5,6 @@ public record class09858(float minX, float minY, float maxX, float maxY) {
       return this.minY;
    }
 
-   public class09858(float minX, float minY, float maxX, float maxY) {
-      super();
-      this.minX = minX;
-      this.minY = minY;
-      this.maxX = maxX;
-      this.maxY = maxY;
-   }
 
    public float i() {
       return this.maxY;
