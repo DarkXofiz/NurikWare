@@ -1,0 +1,47 @@
+package NurikWare;
+
+import minecraft.class08066;
+import org.joml.Matrix4f;
+
+public class class11255 implements class11192<class09321> {
+   public Object N_0;
+   public Object N_1;
+   public Object N_2;
+   public Object N_3;
+   public Object N_4;
+   public Object N_5;
+   public Object N_6;
+
+   class11255(KillEffect var1, class11213 var2) {
+      super();
+      this.i();
+      this.N_6 = var1;
+      this.N_2 = new Matrix4f();
+      this.N_3 = ((class09322)class11185.Z_1).z("u_projection");
+      this.N_4 = ((class09322)class11185.Z_1).z("u_view");
+      this.N_5 = ((class09322)class11185.Z_1).M("texture_in");
+      this.N_0 = var2;
+      this.N_1 = class11174.N().N(class11204.L().N((class12036)KillEffect.L_2).N((class09322)class11185.Z_1).N(4).N()).N(var2).N();
+   }
+
+   static {
+      N();
+   }
+
+   private void i() {
+   }
+
+   private static void N() {
+   }
+
+   public void execute(class09321 var1) {
+      class08066 class08066 = KillEffect.N((KillEffect)this.N_6).e();
+      ((Matrix4f)this.N_2).setOrtho(0.0F, class08066.N, class08066.y, 0.0F, -1.0F, 1000.0F);
+      class11176.N((class11213)this.N_0, 0.0F, 0.0F, 0.0F, class08066.N, class08066.y, -1);
+      ((class11174)this.N_1).N(var1x -> {
+         ((class12038)this.N_3).N((Matrix4f)this.N_2);
+         ((class12038)this.N_4).N((Matrix4f)class11925.y_3);
+         ((class12026)this.N_5).N(((class09064)((KillEffect)this.N_6).u_1).U());
+      });
+   }
+}

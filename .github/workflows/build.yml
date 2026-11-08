@@ -1,0 +1,142 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "build.gradle"
+      - "settings.gradle"
+      - "gradle.properties"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Repo'yu cek
+        uses: actions/checkout@v4
+
+      - name: JDK 21 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Gradle wrapper var mi
+        run: |
+          if [ ! -f gradlew ]; then
+            echo "::error::gradlew yok. Once Bootstrap workflow'unu calistir."
+            exit 1
+          fi
+          chmod +x gradlew
+
+      - name: Gradle cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', 'gradle.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      - name: Derle
+        id: gradle_build
+        run: |
+          set +e
+          ./gradlew build --no-daemon 2>&1 | tee /tmp/build.log
+          STATUS=${PIPESTATUS[0]}
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Hata ozeti
+        if: steps.gradle_build.outputs.status != '0'
+        run: |
+          python3 - <<'PYEOF'
+          import re
+          from collections import Counter
+
+          with open('/tmp/build.log', encoding='utf-8', errors='replace') as f:
+              log_lines = f.readlines()
+
+          # javac hata formati: <dosya>:<satir>: error: <mesaj>
+          err_pattern = re.compile(r'^(.+\.java):(\d+):\s*error:\s*(.+)$')
+          errors = []
+          for i, line in enumerate(log_lines):
+              m = err_pattern.match(line.strip())
+              if m:
+                  file_path, line_no, msg = m.groups()
+                  code_line = ""
+                  # hata mesajindan sonraki satir genelde kaynak kodu gosterir
+                  if i + 1 < len(log_lines) and log_lines[i + 1].strip() and not log_lines[i + 1].strip().startswith(('symbol', 'location')):
+                      code_line = log_lines[i + 1].rstrip('\n')
+                  errors.append((file_path, line_no, msg, code_line))
+
+          print("=" * 70)
+          print(f"HATA OZETI - toplam {len(errors)} hata")
+          print("=" * 70)
+
+          type_counter = Counter()
+          for _, _, msg, _ in errors:
+              key = msg.split(':')[0].strip()[:80]
+              type_counter[key] += 1
+
+          print("\nHata turleri:")
+          for msg, count in type_counter.most_common():
+              print(f"  [{count}x] {msg}")
+
+          print("\nDetay (dosya:satir + kod):")
+          for file_path, line_no, msg, code_line in errors:
+              short_path = file_path.split('src/main/java/')[-1] if 'src/main/java/' in file_path else file_path
+              print(f"\n{short_path}:{line_no}")
+              print(f"  hata: {msg}")
+              if code_line:
+                  print(f"  kod : {code_line.strip()}")
+
+          if not errors:
+              print("\njavac hata kalibi eslemedi, ham log kuyrugu:")
+              print(''.join(log_lines[-80:]))
+          print("\n" + "=" * 70)
+          print("Yukaridaki ciktiyi kopyalayip Claude'a yapistir.")
+          print("=" * 70)
+          PYEOF
+          exit 1
+
+      - name: Build basarisizsa durdur
+        if: steps.gradle_build.outputs.status != '0'
+        run: exit 1
+
+      - name: Jar'i bul
+        id: find_jar
+        run: |
+          JAR_PATH=$(find build/libs -maxdepth 1 -name "*.jar" ! -name "*-sources.jar" ! -name "*-dev.jar" | head -n1)
+          if [ -z "$JAR_PATH" ]; then
+            echo "::error::build/libs altinda jar bulunamadi"
+            exit 1
+          fi
+          echo "jar_path=$JAR_PATH" >> "$GITHUB_OUTPUT"
+          echo "jar_name=$(basename "$JAR_PATH")" >> "$GITHUB_OUTPUT"
+
+      - name: Artifacts'a yukle
+        uses: actions/upload-artifact@v4
+        with:
+          name: nurikware-build
+          path: ${{ steps.find_jar.outputs.jar_path }}
+
+      - name: Surumu oku
+        id: version
+        run: |
+          VERSION=$(grep -m1 '^mod_version' gradle.properties | cut -d'=' -f2 | tr -d ' ')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Release olustur
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}-${{ github.run_number }}
+          name: NurikWare ${{ steps.version.outputs.version }} (build ${{ github.run_number }})
+          files: ${{ steps.find_jar.outputs.jar_path }}
+          generate_release_notes: true

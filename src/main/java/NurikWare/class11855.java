@@ -1,0 +1,46 @@
+package NurikWare;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.security.KeyStore;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.Base64;
+import javax.net.ssl.TrustManagerFactory;
+
+public class class11855 {
+   public static Object N_0;
+
+   private class11855() {
+      super();
+   }
+
+   static {
+      y();
+   }
+
+   private static void y() {
+      N_0 = "MIIFbzCCA1egAwIBAgIUEAU6B66j5oz6CRShuc/e9GRIHUcwDQYJKoZIhvcNAQELBQAwRzELMAkGA1UEBhMCVVMxGTAXBgNVBAoMEE5VUlNVTFRBTiBDTElFTlQxHTAbBgNVBAMMFHNvY2tldC5udXJzdWx0YW4uZnVuMB4XDTI2MDMzMDE2MjQ0M1oXDTM2MDMyNzE2MjQ0M1owRzELMAkGA1UEBhMCVVMxGTAXBgNVBAoMEE5VUlNVTFRBTiBDTElFTlQxHTAbBgNVBAMMFHNvY2tldC5udXJzdWx0YW4uZnVuMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsJ/0GbnVHtpNUlu9yhDrboNumC6sKgIR9JoC4BBiB0m1wxhWSH9VGe6QdqGAhuxnWoq564hAm+QK+ADN/AzkQjlbCXP0cWVUw03Tn8gd9X+GXN8ZmqndGru4Fm2q6xcsy09krf5Nngt+rGW851z/H5G2SIGbVwMPvbYJPm4MUqprImwUfz8Xi/sskKIpQ9AAqQbsY6MCB8zI72PEoC4Wk1pGGojY+uNjQg1RXJkTNJbyr/rhuiMaiwdBzUjEfx9j2YjC7WE8r4kq+sGCUyFdN+eCau4mAZtbR2xtcEbl3OIC9E7S7536TTgZsxOHmnQTADXnK+5//J80uhRURLK7iBcWdo6KvBnZcrQ9W1TVp4pxdKiQi6MvupWsbsvQzPz8Ah0HOMYsh/74+wjVxMArPxr4NhzmdGscD9VVkVfJCa4QfAyzrZ3KXaON/cX6Iac+/0zlF6oY2CqjsV2nksxX2EchUO7bilyqIr8wXWWyvefoUMkS6GpaxXLPT82+drxEbZkwMXQ5yc/s/ZSQP38QkJZmUuDy49LVa+slpwK4ECePQ64tK/iv3X419mPEXm7CcMIZmNphyI5apxlK+LV3VrQNkUhc9TQVHoTJDmF1cTtyeJ5mkhleuXooIQNWbm/SwsL7F7WtA87Mxn46af4udGgyavIrTxS+GLgXSv2EqkkCAwEAAaNTMFEwHQYDVR0OBBYEFPk09qw2kjR3wHfkMLNE0uTFbu8DMB8GA1UdIwQYMBaAFPk09qw2kjR3wHfkMLNE0uTFbu8DMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggIBAKfNDbhaMHdt0Pg8ZiMivMLbDyZ0k/sZW/WuAgiJJE19yA/WvSV261gFIzJG6Wf2x06p5fmpELgzvgOvZhh6E49KfqC9tKqh8tdHdSu+DvYCXcm21cI5G3RI3Tuda06w5K0Tp6CCwa/IiWasXYBZ1S9on/L/AbAgLSEXCgl53SMVefZHAZ44NIKY9qgwutCS6m1Dm65ZzC00AYITSbe1y5KxqNTUUCPTpC5GFdmLCa9noGBXdkMfnuBnY/ZO4625ajf7x7hEv64yH4FRyl92GAg2qYAHnWGypDRROYwcyQtb7DZ6iTJAnBnJckg5M1ZvZRKt7Z/FhI/AKUjkbGGODQiqj/iM6nGJUMEc4Iv0k+OTDlKOtVBAcHsSSa4yACwR0Kg8sklB2DZ/RnlNVkbRasMvQRnIbf/rM3z1ct6FFFscnbmfrcYcmCb4LAZ4l+8Iu9LMBjHNSQk8GEkF/E1/1F9BfqOjYKKhiJs++1vRc7piPRX6cYnkKEePZXMFrKv5skTrntjNFeN/jdfHLbI8EzXp6MY6jHWPKrEc8t2Xn4a0mRFsKjYtp59n02WGvdgOTPyMTLsoXg70vWjqNg63TCSAQWVWQbmz5pytjqG6qK7cONqR/9pV4f9ztSY4G8FKWp0aR5P9oCeCz3jJjeIsTYeNtWAKSXj4/yxJaT4zglLi";
+   }
+
+   public static TrustManagerFactory N() throws GeneralSecurityException, IOException {
+      byte[] abyte = Base64.getDecoder()
+         .decode(
+            "MIIFbzCCA1egAwIBAgIUEAU6B66j5oz6CRShuc/e9GRIHUcwDQYJKoZIhvcNAQELBQAwRzELMAkGA1UEBhMCVVMxGTAXBgNVBAoMEE5VUlNVTFRBTiBDTElFTlQxHTAbBgNVBAMMFHNvY2tldC5udXJzdWx0YW4uZnVuMB4XDTI2MDMzMDE2MjQ0M1oXDTM2MDMyNzE2MjQ0M1owRzELMAkGA1UEBhMCVVMxGTAXBgNVBAoMEE5VUlNVTFRBTiBDTElFTlQxHTAbBgNVBAMMFHNvY2tldC5udXJzdWx0YW4uZnVuMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsJ/0GbnVHtpNUlu9yhDrboNumC6sKgIR9JoC4BBiB0m1wxhWSH9VGe6QdqGAhuxnWoq564hAm+QK+ADN/AzkQjlbCXP0cWVUw03Tn8gd9X+GXN8ZmqndGru4Fm2q6xcsy09krf5Nngt+rGW851z/H5G2SIGbVwMPvbYJPm4MUqprImwUfz8Xi/sskKIpQ9AAqQbsY6MCB8zI72PEoC4Wk1pGGojY+uNjQg1RXJkTNJbyr/rhuiMaiwdBzUjEfx9j2YjC7WE8r4kq+sGCUyFdN+eCau4mAZtbR2xtcEbl3OIC9E7S7536TTgZsxOHmnQTADXnK+5//J80uhRURLK7iBcWdo6KvBnZcrQ9W1TVp4pxdKiQi6MvupWsbsvQzPz8Ah0HOMYsh/74+wjVxMArPxr4NhzmdGscD9VVkVfJCa4QfAyzrZ3KXaON/cX6Iac+/0zlF6oY2CqjsV2nksxX2EchUO7bilyqIr8wXWWyvefoUMkS6GpaxXLPT82+drxEbZkwMXQ5yc/s/ZSQP38QkJZmUuDy49LVa+slpwK4ECePQ64tK/iv3X419mPEXm7CcMIZmNphyI5apxlK+LV3VrQNkUhc9TQVHoTJDmF1cTtyeJ5mkhleuXooIQNWbm/SwsL7F7WtA87Mxn46af4udGgyavIrTxS+GLgXSv2EqkkCAwEAAaNTMFEwHQYDVR0OBBYEFPk09qw2kjR3wHfkMLNE0uTFbu8DMB8GA1UdIwQYMBaAFPk09qw2kjR3wHfkMLNE0uTFbu8DMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggIBAKfNDbhaMHdt0Pg8ZiMivMLbDyZ0k/sZW/WuAgiJJE19yA/WvSV261gFIzJG6Wf2x06p5fmpELgzvgOvZhh6E49KfqC9tKqh8tdHdSu+DvYCXcm21cI5G3RI3Tuda06w5K0Tp6CCwa/IiWasXYBZ1S9on/L/AbAgLSEXCgl53SMVefZHAZ44NIKY9qgwutCS6m1Dm65ZzC00AYITSbe1y5KxqNTUUCPTpC5GFdmLCa9noGBXdkMfnuBnY/ZO4625ajf7x7hEv64yH4FRyl92GAg2qYAHnWGypDRROYwcyQtb7DZ6iTJAnBnJckg5M1ZvZRKt7Z/FhI/AKUjkbGGODQiqj/iM6nGJUMEc4Iv0k+OTDlKOtVBAcHsSSa4yACwR0Kg8sklB2DZ/RnlNVkbRasMvQRnIbf/rM3z1ct6FFFscnbmfrcYcmCb4LAZ4l+8Iu9LMBjHNSQk8GEkF/E1/1F9BfqOjYKKhiJs++1vRc7piPRX6cYnkKEePZXMFrKv5skTrntjNFeN/jdfHLbI8EzXp6MY6jHWPKrEc8t2Xn4a0mRFsKjYtp59n02WGvdgOTPyMTLsoXg70vWjqNg63TCSAQWVWQbmz5pytjqG6qK7cONqR/9pV4f9ztSY4G8FKWp0aR5P9oCeCz3jJjeIsTYeNtWAKSXj4/yxJaT4zglLi"
+         );
+      CertificateFactory certificatefactory = CertificateFactory.getInstance("X.509");
+
+      X509Certificate x509certificate;
+      try (ByteArrayInputStream bytearrayinputstream = new ByteArrayInputStream(abyte)) {
+         x509certificate = (X509Certificate)certificatefactory.generateCertificate(bytearrayinputstream);
+      }
+
+      KeyStore keystore = KeyStore.getInstance(KeyStore.getDefaultType());
+      keystore.load(null, null);
+      keystore.setCertificateEntry("nurikware-ca", x509certificate);
+      TrustManagerFactory trustmanagerfactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+      trustmanagerfactory.init(keystore);
+      return trustmanagerfactory;
+   }
+}

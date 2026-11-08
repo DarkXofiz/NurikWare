@@ -1,0 +1,3998 @@
+[
+ {
+  "id": "fabric-api",
+  "name": "Fabric API",
+  "version": "0.119.4+1.21.4",
+  "desc": "Core API module providing key hooks and intercompatibility features.",
+  "src": "fabric-api-0.119.4-1.21.4.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {},
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric/icon.png",
+  "environment": "*",
+  "provides": [
+   "fabric"
+  ],
+  "depends": [
+   "fabricloader",
+   "java",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-api-base",
+  "name": "Fabric API Base",
+  "version": "0.4.54+b47eab6b04",
+  "desc": "Contains the essentials for Fabric API modules.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-api-base-0.4.54+b47eab6b04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-api-base/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-api-lookup-api-v1",
+  "name": "Fabric API Lookup API (v1)",
+  "version": "1.6.86+b1caf1e904",
+  "desc": "A universal way to expose and query APIs",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-api-lookup-api-v1-1.6.86+b1caf1e904.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.lookup.ApiLookupImpl"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-api-lookup-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-lifecycle-events-v1"
+  ]
+ },
+ {
+  "id": "fabric-biome-api-v1",
+  "name": "Fabric Biome API (v1)",
+  "version": "15.0.6+b1c29d8e04",
+  "desc": "Hooks for adding biomes to the default world generator.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-biome-api-v1-15.0.6+b1c29d8e04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-biome-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-block-api-v1",
+  "name": "Fabric Block API (v1)",
+  "version": "1.0.31+7feeb73304",
+  "desc": "Hooks for blocks",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-block-api-v1-1.0.31+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_2248": [
+     "net/fabricmc/fabric/api/block/v1/FabricBlock"
+    ],
+    "net/minecraft/class_2680": [
+     "net/fabricmc/fabric/api/block/v1/FabricBlockState"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-block-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-block-view-api-v2",
+  "name": "Fabric BlockView API (v2)",
+  "version": "1.0.20+9c49cc8c04",
+  "desc": "Hooks for block views",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-block-view-api-v2-1.0.20+9c49cc8c04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1922": [
+     "net/fabricmc/fabric/api/blockview/v2/FabricBlockView"
+    ],
+    "net/minecraft/class_2586": [
+     "net/fabricmc/fabric/api/blockview/v2/RenderDataBlockEntity"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-block-view-api-v2/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-blockrenderlayer-v1",
+  "name": "Fabric BlockRenderLayer Registration (v1)",
+  "version": "2.0.8+7feeb73304",
+  "desc": "Registration utility for block and fluid render layers.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-blockrenderlayer-v1-2.0.8+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-blockrenderlayer-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-client-tags-api-v1",
+  "name": "Fabric Client Tags",
+  "version": "1.1.29+20ea1e2304",
+  "desc": "Adds the ability to load tags from the local mods.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-client-tags-api-v1-1.1.29+20ea1e2304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-client-tags-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-command-api-v1",
+  "name": "Fabric Command API (v1)",
+  "version": "1.1.1+351679a77d",
+  "desc": "Adds command-related hooks.",
+  "src": "fabric-command-api-v1-1.1.1+351679a77d-6038181a2231a3cb.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-command-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-command-api-v2",
+  "name": "Fabric Command API (v2)",
+  "version": "2.2.41+e496eb1504",
+  "desc": "Adds command-related hooks.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-command-api-v2-2.2.41+e496eb1504.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_2303": [
+     "net/fabricmc/fabric/api/command/v2/FabricEntitySelectorReader"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-command-api-v2/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-commands-v0",
+  "name": "Fabric Commands (v0)",
+  "version": "0.2.79+df3654b304",
+  "desc": "Deprecated. Please migrate to v2",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-commands-v0-0.2.79+df3654b304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "deprecated"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-commands-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-command-api-v2"
+  ]
+ },
+ {
+  "id": "fabric-content-registries-v0",
+  "name": "Fabric Content Registries (v0)",
+  "version": "9.1.19+25d1a67604",
+  "desc": "Adds registries for vanilla mechanics that are missing them.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-content-registries-v0-9.1.19+25d1a67604.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1845$class_9665": [
+     "net/fabricmc/fabric/api/registry/FabricBrewingRecipeRegistryBuilder"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-content-registries-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-lifecycle-events-v1",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "fabric-convention-tags-v1",
+  "name": "Fabric Convention Tags",
+  "version": "2.1.20+7f945d5b04",
+  "desc": "Contains common tags used by mods for vanilla things.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-convention-tags-v1-2.1.20+7f945d5b04.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.tag.convention.ConventionLogWarnings"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-convention-tags-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-convention-tags-v2",
+  "name": "Fabric Convention Tags (v2)",
+  "version": "2.14.1+aebda09404",
+  "desc": "Contains common tags used by mods for better inter-mod compatibility.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-convention-tags-v2-2.14.1+aebda09404.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.tag.convention.v2.TranslationConventionLogWarnings"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_6862": [
+     "net/fabricmc/fabric/api/tag/FabricTagKey"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-convention-tags-v2/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-lifecycle-events-v1"
+  ]
+ },
+ {
+  "id": "fabric-crash-report-info-v1",
+  "name": "Fabric Crash Report Info (v1)",
+  "version": "0.3.6+7feeb73304",
+  "desc": "Adds Fabric-related debug info to crash reports.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-crash-report-info-v1-0.3.6+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-crash-report-info-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-data-attachment-api-v1",
+  "name": "Fabric Data Attachment API (v1)",
+  "version": "1.6.2+e99da0f704",
+  "desc": "Allows conveniently attaching data to existing game objects",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-data-attachment-api-v1-1.6.2+e99da0f704.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.attachment.AttachmentEntrypoint"
+   ],
+   [
+    "main",
+    "net.fabricmc.fabric.impl.attachment.sync.AttachmentSync"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.attachment.client.AttachmentSyncClient"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "experimental",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_2586": [
+     "net/fabricmc/fabric/api/attachment/v1/AttachmentTarget"
+    ],
+    "net/minecraft/class_2791": [
+     "net/fabricmc/fabric/api/attachment/v1/AttachmentTarget"
+    ],
+    "net/minecraft/class_1297": [
+     "net/fabricmc/fabric/api/attachment/v1/AttachmentTarget"
+    ],
+    "net/minecraft/class_1937": [
+     "net/fabricmc/fabric/api/attachment/v1/AttachmentTarget"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-data-attachment-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-entity-events-v1",
+   "fabric-object-builder-api-v1",
+   "fabric-networking-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-data-generation-api-v1",
+  "name": "Fabric Data Generation API (v1)",
+  "version": "22.3.1+0f4e5f5504",
+  "desc": "Allows for automatic data generation.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-data-generation-api-v1-22.3.1+0f4e5f5504.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_7788": [
+     "net/fabricmc/fabric/api/datagen/v1/loot/FabricBlockLootTableGenerator"
+    ],
+    "net/minecraft/class_7789": [
+     "net/fabricmc/fabric/api/datagen/v1/loot/FabricEntityLootTableGenerator"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-data-generation-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-tag-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-dimensions-v1",
+  "name": "Fabric Dimensions API (v1)",
+  "version": "4.0.10+7feeb73304",
+  "desc": "Fabric Dimension API.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-dimensions-v1-4.0.10+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-dimensions-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-entity-events-v1",
+  "name": "Fabric Entity Events (v1)",
+  "version": "2.0.15+62245bef04",
+  "desc": "Events to hook into entities.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-entity-events-v1-2.0.15+62245bef04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-entity-events-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-events-interaction-v0",
+  "name": "Fabric Events Interaction (v0)",
+  "version": "4.0.4+a4eebcf004",
+  "desc": "Events for player interaction with blocks and entities.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-events-interaction-v0-4.0.4+a4eebcf004.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.event.interaction.InteractionEventsRouter"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-events-interaction-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-networking-api-v1",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-game-rule-api-v1",
+  "name": "Fabric Game Rule API (v1)",
+  "version": "1.0.63+7d48d43904",
+  "desc": "Allows registration of custom game rules.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-game-rule-api-v1-1.0.63+7d48d43904.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-game-rule-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-item-api-v1",
+  "name": "Fabric Item API (v1)",
+  "version": "11.4.0+189dd6fe04",
+  "desc": "Hooks for items",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-item-api-v1-11.4.0+189dd6fe04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1792": [
+     "net/fabricmc/fabric/api/item/v1/FabricItem"
+    ],
+    "net/minecraft/class_1792$class_1793": [
+     "net/fabricmc/fabric/api/item/v1/FabricItem$Settings"
+    ],
+    "net/minecraft/class_1799": [
+     "net/fabricmc/fabric/api/item/v1/FabricItemStack"
+    ],
+    "net/minecraft/class_9323$class_9324": [
+     "net/fabricmc/fabric/api/item/v1/FabricComponentMapBuilder"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-item-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-item-group-api-v1",
+  "name": "Fabric Item Group API (v1)",
+  "version": "4.2.2+fcb9601404",
+  "desc": "An API for adding custom item groups.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-item-group-api-v1-4.2.2+fcb9601404.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_481": [
+     "net/fabricmc/fabric/api/client/itemgroup/v1/FabricCreativeInventoryScreen"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-item-group-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "fabric-key-binding-api-v1",
+  "name": "Fabric Key Binding API (v1)",
+  "version": "1.0.57+7d48d43904",
+  "desc": "Key Binding registry API.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-key-binding-api-v1-1.0.57+7d48d43904.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-key-binding-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-keybindings-v0",
+  "name": "Fabric Key Bindings (v0)",
+  "version": "0.2.55+df3654b304",
+  "desc": "Keybinding registry API.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-keybindings-v0-0.2.55+df3654b304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "deprecated"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-keybindings-v0/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-key-binding-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-lifecycle-events-v1",
+  "name": "Fabric Lifecycle Events (v1)",
+  "version": "2.5.4+bf2a60eb04",
+  "desc": "Events for the game's lifecycle.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-lifecycle-events-v1-2.5.4+bf2a60eb04.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.event.lifecycle.LifecycleEventsImpl"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.client.event.lifecycle.ClientLifecycleEventsImpl"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-lifecycle-events-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-loot-api-v2",
+  "name": "Fabric Loot API (v2)",
+  "version": "3.0.38+3f89f5a504",
+  "desc": "Hooks for manipulating loot tables.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-loot-api-v2-3.0.38+3f89f5a504.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.loot.v2.LootInitializer"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "deprecated"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-loot-api-v2/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "fabric-loot-api-v3",
+  "name": "Fabric Loot API (v3)",
+  "version": "1.0.26+203e6b2304",
+  "desc": "Hooks for manipulating loot tables.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-loot-api-v3-1.0.26+203e6b2304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_52$class_53": [
+     "net/fabricmc/fabric/api/loot/v3/FabricLootTableBuilder"
+    ],
+    "net/minecraft/class_55$class_56": [
+     "net/fabricmc/fabric/api/loot/v3/FabricLootPoolBuilder"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-loot-api-v3/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "fabric-message-api-v1",
+  "name": "Fabric Message API (v1)",
+  "version": "6.0.26+238a33c004",
+  "desc": "Adds message-related hooks.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-message-api-v1-6.0.26+238a33c004.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-message-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-model-loading-api-v1",
+  "name": "Fabric Model Loading API (v1)",
+  "version": "5.2.8+946bf4c32c",
+  "desc": "Provides hooks for model loading.",
+  "src": "fabric-model-loading-api-v1-5.2.+946bf4c32c-a998d86d4f946a2f.jar",
+  "entrypoints": [
+   [
+    "client",
+    "net.fabricmc.fabric.impl.client.model.loading.CustomUnbakedBlockStateModelInit"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1092": [
+     "net/fabricmc/fabric/api/client/model/loading/v1/FabricBakedModelManager"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-model-loading-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-renderer-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-networking-api-v1",
+  "name": "Fabric Networking API (v1)",
+  "version": "4.4.0+db5e668204",
+  "desc": "Low-level, vanilla protocol oriented networking hooks.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-networking-api-v1-4.4.0+db5e668204.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.networking.CommonPacketsImpl::init"
+   ],
+   [
+    "main",
+    "net.fabricmc.fabric.impl.networking.NetworkingImpl::init"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.networking.client.ClientNetworkingImpl::clientInit"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_8610": [
+     "net/fabricmc/fabric/api/networking/v1/FabricServerConfigurationNetworkHandler"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-networking-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-object-builder-api-v1",
+  "name": "Fabric Object Builder API (v1)",
+  "version": "18.0.14+38b0d59804",
+  "desc": "Builders for objects vanilla has locked down.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-object-builder-api-v1-18.0.14+38b0d59804.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1299$class_1300": [
+     "net/fabricmc/fabric/api/object/builder/v1/entity/FabricEntityType$Builder<TT;>"
+    ],
+    "net/minecraft/class_2591": [
+     "net/fabricmc/fabric/api/object/builder/v1/block/entity/FabricBlockEntityType"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-object-builder-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-particles-v1",
+  "name": "Fabric Particles (v1)",
+  "version": "4.1.10+946bf4c32c",
+  "desc": "Hooks for registering custom particles.",
+  "src": "fabric-particles-v1-4.1.10+946bf4c32c-ccb040d0b4aee56f.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.particle.ExtendedBlockStateParticleEffectSync"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.client.particle.ExtendedBlockStateParticleEffectSyncClient"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_2388": [
+     "net/fabricmc/fabric/api/particle/v1/FabricBlockStateParticleEffect"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-particles-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-networking-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-recipe-api-v1",
+  "name": "Fabric Recipe API (v1)",
+  "version": "8.2.2+4ebb5c0853",
+  "desc": "Recipe extensions such as creation of new types of recipe ingredients and recipe synchronization.",
+  "src": "fabric-recipe-api-v1-8.2.2+4ebb5c0853-1507521379f39321.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.recipe.ingredient.CustomIngredientInit"
+   ],
+   [
+    "main",
+    "net.fabricmc.fabric.impl.recipe.ingredient.CustomIngredientSync"
+   ],
+   [
+    "main",
+    "net.fabricmc.fabric.impl.recipe.sync.RecipeSyncImpl"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.recipe.ingredient.client.CustomIngredientSyncClient"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.recipe.sync.client.RecipeSyncImplClient"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1856": [
+     "net/fabricmc/fabric/api/recipe/v1/ingredient/FabricIngredient"
+    ],
+    "net/minecraft/class_1863": [
+     "net/fabricmc/fabric/api/recipe/v1/FabricServerRecipeManager"
+    ],
+    "net/minecraft/class_10286": [
+     "net/fabricmc/fabric/api/recipe/v1/FabricRecipeManager"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-recipe-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-networking-api-v1",
+   "fabric-lifecycle-events-v1"
+  ]
+ },
+ {
+  "id": "fabric-registry-sync-v0",
+  "name": "Fabric Registry Sync (v0)",
+  "version": "6.1.11+4a9c1ece04",
+  "desc": "Syncs registry mappings.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-registry-sync-v0-6.1.11+4a9c1ece04.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.registry.sync.FabricRegistryInit"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.client.registry.sync.FabricRegistryClientInit"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_2378": [
+     "net/fabricmc/fabric/api/event/registry/FabricRegistry"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-registry-sync-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-networking-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-renderer-api-v1",
+  "name": "Fabric Renderer API (v1)",
+  "version": "7.0.2+946bf4c32c",
+  "desc": "Defines rendering extensions for dynamic/fancy block and item models.",
+  "src": "fabric-renderer-api-v1-7.0.2+946bf4c32c-2a114c9b4da8b023.jar",
+  "entrypoints": [
+   [
+    "client",
+    "net.fabricmc.fabric.impl.renderer.DebugHudClient"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_10889": [
+     "net/fabricmc/fabric/api/renderer/v1/model/FabricBlockModelPart"
+    ],
+    "net/minecraft/class_773": [
+     "net/fabricmc/fabric/api/renderer/v1/model/FabricBlockModels"
+    ],
+    "net/minecraft/class_1087": [
+     "net/fabricmc/fabric/api/renderer/v1/model/FabricBlockStateModel"
+    ],
+    "net/minecraft/class_778": [
+     "net/fabricmc/fabric/api/renderer/v1/render/FabricBlockModelRenderer"
+    ],
+    "net/minecraft/class_776": [
+     "net/fabricmc/fabric/api/renderer/v1/render/FabricBlockRenderManager"
+    ],
+    "net/minecraft/class_10444$class_10446": [
+     "net/fabricmc/fabric/api/renderer/v1/render/FabricLayerRenderState"
+    ],
+    "net/minecraft/class_4724$class_7774": [
+     "net/fabricmc/fabric/api/renderer/v1/sprite/FabricAtlasPreparation"
+    ],
+    "net/minecraft/class_9826": [
+     "net/fabricmc/fabric/api/renderer/v1/sprite/FabricErrorCollectingSpriteGetter"
+    ],
+    "net/minecraft/class_1059": [
+     "net/fabricmc/fabric/api/renderer/v1/sprite/FabricSpriteAtlasTexture"
+    ],
+    "net/minecraft/class_7766$class_7767": [
+     "net/fabricmc/fabric/api/renderer/v1/sprite/FabricStitchResult"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-renderer-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-api-base",
+   "fabric-rendering-v1"
+  ]
+ },
+ {
+  "id": "fabric-renderer-indigo",
+  "name": "Fabric Renderer - Indigo",
+  "version": "2.0.3+50f0feb204",
+  "desc": "Default implementation of the Fabric Renderer API.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-renderer-indigo-2.0.3+50f0feb204.jar",
+  "entrypoints": [
+   [
+    "client",
+    "net.fabricmc.fabric.impl.client.indigo.Indigo"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-renderer-indigo/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-api-base",
+   "fabric-renderer-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-rendering-data-attachment-v1",
+  "name": "Fabric Rendering Data Attachment (v1)",
+  "version": "0.3.58+73761d2e04",
+  "desc": "Thread-safe hooks for block entity data use during terrain rendering.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-rendering-data-attachment-v1-0.3.58+73761d2e04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "deprecated"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-rendering-data-attachment-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-block-view-api-v2"
+  ]
+ },
+ {
+  "id": "fabric-rendering-fluids-v1",
+  "name": "Fabric Rendering Fluids (v1)",
+  "version": "3.1.19+7feeb73304",
+  "desc": "Hooks for registering fluid renders.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-rendering-fluids-v1-3.1.19+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-rendering-fluids-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-rendering-v1",
+  "name": "Fabric Rendering (v1)",
+  "version": "12.6.0+486b7ff72c",
+  "desc": "Hooks and registries for rendering-related things.",
+  "src": "fabric-rendering-v1-12.6.0+486b7ff72c-96dfd0c501918e0f.jar",
+  "entrypoints": [
+   [
+    "client",
+    "net.fabricmc.fabric.impl.client.rendering.hud.HudStatusBarHeightRegistryImpl"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_10017": [
+     "net/fabricmc/fabric/api/client/rendering/v1/FabricRenderState"
+    ],
+    "net/minecraft/class_10090": [
+     "net/fabricmc/fabric/api/client/rendering/v1/FabricRenderState"
+    ],
+    "net/minecraft/class_10090$class_10091": [
+     "net/fabricmc/fabric/api/client/rendering/v1/FabricRenderState"
+    ],
+    "net/minecraft/class_10444": [
+     "net/fabricmc/fabric/api/client/rendering/v1/FabricRenderState"
+    ],
+    "net/minecraft/class_10444$class_10446": [
+     "net/fabricmc/fabric/api/client/rendering/v1/FabricRenderState"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-rendering-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-lifecycle-events-v1"
+  ]
+ },
+ {
+  "id": "fabric-resource-conditions-api-v1",
+  "name": "Fabric Resource Conditions API (v1)",
+  "version": "5.0.13+203e6b2304",
+  "desc": "Allows conditionally loading resources.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-resource-conditions-api-v1-5.0.13+203e6b2304.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.resource.conditions.ResourceConditionsImpl"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-resource-conditions-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-resource-loader-v0",
+  "name": "Fabric Resource Loader (v0)",
+  "version": "3.1.1+360374ac04",
+  "desc": "Asset and data resource loading.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-resource-loader-v0-3.1.1+360374ac04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-resource-loader-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-screen-api-v1",
+  "name": "Fabric Screen API (v1)",
+  "version": "2.0.38+7feeb73304",
+  "desc": "Adds screen related hooks.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-screen-api-v1-2.0.38+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-screen-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-screen-handler-api-v1",
+  "name": "Fabric Screen Handler API (v1)",
+  "version": "1.3.118+7feeb73304",
+  "desc": "Hooks and extensions for creating screen handlers.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-screen-handler-api-v1-1.3.118+7feeb73304.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.screenhandler.Networking"
+   ],
+   [
+    "client",
+    "net.fabricmc.fabric.impl.screenhandler.client.ClientNetworking"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_3908": [
+     "net/fabricmc/fabric/api/screenhandler/v1/FabricScreenHandlerFactory"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-screen-handler-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-networking-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-sound-api-v1",
+  "name": "Fabric Sound API (v1)",
+  "version": "1.0.32+7feeb73304",
+  "desc": "Hooks for modifying Minecraft's sound system.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-sound-api-v1-1.0.32+7feeb73304.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_1113": [
+     "net/fabricmc/fabric/api/client/sound/v1/FabricSoundInstance"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-sound-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-tag-api-v1",
+  "name": "Fabric Tag API (v1)",
+  "version": "1.0.7+7d48d43904",
+  "desc": "Hooks for working with tags.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-tag-api-v1-1.0.7+7d48d43904.jar",
+  "entrypoints": [
+   [
+    "main",
+    "net.fabricmc.fabric.impl.tag.TagInit"
+   ]
+  ],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-tag-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "fabric-transfer-api-v1",
+  "name": "Fabric Transfer API (v1)",
+  "version": "5.4.9+efa825c904",
+  "desc": "A common API for the transfer of fluids, items and other game resources.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-transfer-api-v1-5.4.9+efa825c904.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-transfer-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-lookup-api-v1",
+   "fabric-rendering-fluids-v1"
+  ]
+ },
+ {
+  "id": "fabric-transitive-access-wideners-v1",
+  "name": "Fabric Transitive Access Wideners (v1)",
+  "version": "6.3.2+56e78b9b04",
+  "desc": "Contains transitive access wideners that provide access to otherwise inaccessible Minecraft code.",
+  "src": "fabric-api-0.119.4-1.21.4.jar!META-INF/jars/fabric-transitive-access-wideners-v1-6.3.2+56e78b9b04.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-transitive-access-wideners-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "de_florianmichael_classic4j",
+  "name": "Classic4J",
+  "version": "2.1.1-SNAPSHOT",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/Classic4J-2.1.1-SNAPSHOT.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_github_oryxel_cubeconverter",
+  "name": "CubeConverter",
+  "version": "916cadb12a",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/CubeConverter-916cadb12a.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_raphimc_minecraftauth",
+  "name": "MinecraftAuth",
+  "version": "4.1.1",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/MinecraftAuth-4.1.1.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_lenni0451_reflect",
+  "name": "Reflect",
+  "version": "1.4.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/Reflect-1.4.0.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_raphimc_viabedrock",
+  "name": "ViaBedrock",
+  "version": "0.0.16-20250404.165607-5",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/ViaBedrock-0.0.16-20250404.165607-5.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_raphimc_vialegacy",
+  "name": "ViaLegacy",
+  "version": "3.0.10-20250426.140714-8",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/ViaLegacy-3.0.10-20250426.140714-8.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_jodah_expiringmap",
+  "name": "expiringmap",
+  "version": "0.5.10",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/expiringmap-0.5.10.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_lenni0451_mcstructs-bedrock_forms",
+  "name": "forms",
+  "version": "2.0.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/forms-2.0.0.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_lenni0451_commons_httpclient",
+  "name": "httpclient",
+  "version": "1.6.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/httpclient-1.6.0.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "io_jsonwebtoken_jjwt-api",
+  "name": "jjwt-api",
+  "version": "0.12.6",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/jjwt-api-0.12.6.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "io_jsonwebtoken_jjwt-gson",
+  "name": "jjwt-gson",
+  "version": "0.12.6",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/jjwt-gson-0.12.6.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "io_jsonwebtoken_jjwt-impl",
+  "name": "jjwt-impl",
+  "version": "0.12.6",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/jjwt-impl-0.12.6.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_google_code_findbugs_jsr305",
+  "name": "jsr305",
+  "version": "3.0.2",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/jsr305-3.0.2.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_lz4_lz4-pure-java",
+  "name": "lz4-pure-java",
+  "version": "1.8.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/lz4-pure-java-1.8.0.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "team_unnamed_mocha",
+  "name": "mocha",
+  "version": "3.0.1",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/mocha-3.0.1.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "io_netty_netty-codec-http",
+  "name": "netty-codec-http",
+  "version": "4.2.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/netty-codec-http-4.2.0.Final.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_cloudburstmc_netty_netty-transport-raknet",
+  "name": "netty-transport-raknet",
+  "version": "1.0.0.CR3-SNAPSHOT",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/netty-transport-raknet-1.0.0.CR3-SNAPSHOT.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_vdurmont_semver4j",
+  "name": "semver4j",
+  "version": "3.1.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/semver4j-3.1.0.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_lenni0451_mcstructs-bedrock_text",
+  "name": "text",
+  "version": "2.0.0",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/text-2.0.0.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_viaversion_viaaprilfools-common",
+  "name": "viaaprilfools-common",
+  "version": "4.0.2-20250426.140810-22",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/viaaprilfools-common-4.0.2-20250426.140810-22.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_viaversion_viabackwards-common",
+  "name": "viabackwards-common",
+  "version": "5.3.3-20250426.185209-1",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/viabackwards-common-5.3.3-20250426.185209-1.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "viafabricplus-api",
+  "name": "ViaFabricPlus API",
+  "version": "4.0.5-BACKPORT",
+  "desc": "Interface for third-party mods to interact with ViaFabricPlus internals.",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/viafabricplus-api-4.0.5-BACKPORT.jar",
+  "entrypoints": [],
+  "authors": [
+   "FlorianMichael/EnZaXD",
+   "RK_01"
+  ],
+  "custom": {
+   "modmenu": {
+    "parent": "viafabricplus"
+   }
+  },
+  "contact": {
+   "homepage": "https://florianmichael.de/",
+   "sources": "https://github.com/ViaVersion/ViaFabricPlus",
+   "issues": "https://github.com/ViaVersion/ViaFabricPlus/issues",
+   "email": "florian.michael07@gmail.com"
+  },
+  "license": [
+   "GPL-v3"
+  ],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "viafabricplus"
+  ]
+ },
+ {
+  "id": "viafabricplus-api-legacy",
+  "name": "ViaFabricPlus API Legacy",
+  "version": "4.0.5-BACKPORT",
+  "desc": "Legacy compatibility for mods using the ViaFabricPlus pre 4.0.0 API.",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/viafabricplus-api-legacy-4.0.5-BACKPORT.jar",
+  "entrypoints": [],
+  "authors": [
+   "FlorianMichael/EnZaXD",
+   "RK_01"
+  ],
+  "custom": {
+   "modmenu": {
+    "parent": "viafabricplus"
+   }
+  },
+  "contact": {
+   "homepage": "https://florianmichael.de/",
+   "sources": "https://github.com/ViaVersion/ViaFabricPlus",
+   "issues": "https://github.com/ViaVersion/ViaFabricPlus/issues",
+   "email": "florian.michael07@gmail.com"
+  },
+  "license": [
+   "GPL-v3"
+  ],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "viafabricplus"
+  ]
+ },
+ {
+  "id": "viafabricplus-visuals",
+  "name": "ViaFabricPlus Visuals",
+  "version": "4.0.5-BACKPORT",
+  "desc": "Additional mod for ViaFabricPlus to add visual-only changes.",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/viafabricplus-visuals-4.0.5-BACKPORT.jar",
+  "entrypoints": [
+   [
+    "viafabricplus",
+    "com.viaversion.viafabricplus.visuals.ViaFabricPlusVisuals"
+   ]
+  ],
+  "authors": [
+   "FlorianMichael/EnZaXD",
+   "RK_01"
+  ],
+  "custom": {
+   "modmenu": {
+    "parent": "viafabricplus"
+   }
+  },
+  "contact": {
+   "homepage": "https://florianmichael.de/",
+   "sources": "https://github.com/ViaVersion/ViaFabricPlus",
+   "issues": "https://github.com/ViaVersion/ViaFabricPlus/issues",
+   "email": "florian.michael07@gmail.com"
+  },
+  "license": [
+   "GPL-v3"
+  ],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "viafabricplus"
+  ]
+ },
+ {
+  "id": "com_viaversion_vialoader",
+  "name": "vialoader",
+  "version": "4.0.3-20250426.141011-6",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/vialoader-4.0.3-20250426.141011-6.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_viaversion_viaversion-common",
+  "name": "viaversion-common",
+  "version": "5.3.3-20250426.143637-8",
+  "desc": "",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar!META-INF/jars/viaversion-common-5.3.3-20250426.143637-8.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_github_figuramc_luaj_luaj-core",
+  "name": "luaj-core",
+  "version": "3.0.8-figura",
+  "desc": "",
+  "src": "com_github_figuramc_luaj_luaj-co.0.8-figura-887cb5625bf52c29.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_github_figuramc_luaj_luaj-jse",
+  "name": "luaj-jse",
+  "version": "3.0.8-figura",
+  "desc": "",
+  "src": "com_github_figuramc_luaj_luaj-js.0.8-figura-cdce68dda961bbd9.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_github_weisj_jsvg",
+  "name": "jsvg",
+  "version": "2.1.0",
+  "desc": "",
+  "src": "com_github_weisj_jsvg-2.1.0-fc8ace27d682f5e6.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_google_code_gson_gson",
+  "name": "gson",
+  "version": "2.11.0",
+  "desc": "",
+  "src": "com_google_code_gson_gson-2.11.0-9997b3f311587eac.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_google_errorprone_error_prone_annotations",
+  "name": "error_prone_annotations",
+  "version": "2.27.0",
+  "desc": "",
+  "src": "com_google_errorprone_error_pronions-2.27.0-e63d2b345f995938.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_neovisionaries_nv-websocket-client",
+  "name": "nv-websocket-client",
+  "version": "2.14",
+  "desc": "",
+  "src": "com_neovisionaries_nv-websocket-client-2.14-c977f42ce3865a42.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_squareup_okhttp3_okhttp",
+  "name": "okhttp",
+  "version": "4.12.0",
+  "desc": "",
+  "src": "com_squareup_okhttp3_okhttp-4.12.0-7c61390c345a3ab.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_squareup_okhttp3_okhttp-sse",
+  "name": "okhttp-sse",
+  "version": "4.12.0",
+  "desc": "",
+  "src": "com_squareup_okhttp3_okhttp-sse-4.12.0-6d35386cd9d85056.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "com_squareup_okio_okio-jvm",
+  "name": "okio-jvm",
+  "version": "3.6.0",
+  "desc": "",
+  "src": "com_squareup_okio_okio-jvm-3.6.0-55a4ecb871674ab5.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "dev_babbaj_nether-pathfinder",
+  "name": "nether-pathfinder",
+  "version": "1.4.1",
+  "desc": "",
+  "src": "dev_babbaj_nether-pathfinder-1.4.1-abcbb6c7cfacf7f3.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true,
+   "unimined:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "dev_redstones_mediaplayerinfo_media-player-info",
+  "name": "media-player-info",
+  "version": "0.1.0",
+  "desc": "",
+  "src": "dev_redstones_mediaplayerinfo_me-info-0.1.0-ab99b24fa362286c.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "de_florianreuth_waybackauthlib",
+  "name": "waybackauthlib",
+  "version": "1.1.0",
+  "desc": "",
+  "src": "de_florianreuth_waybackauthlib-1.1.0-14bed75acfe9334d.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "fabric-block-getter-api-v2",
+  "name": "Fabric BlockGetter API (v2)",
+  "version": "2.0.6+ec56b60139",
+  "desc": "Hooks for block getters",
+  "src": "fabric-block-getter-api-v2-2.0.6+ec56b60139-a0475a50c831feaa.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-block-getter-api-v2/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-creative-tab-api-v1",
+  "name": "Fabric Creative Tab API (v1)",
+  "version": "5.0.10+d871b99e39",
+  "desc": "An API for adding custom item groups.",
+  "src": "fabric-creative-tab-api-v1-5.0.1+d871b99e39-6f11cb8c9c0e36b5.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-creative-tab-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-resource-loader-v1"
+  ]
+ },
+ {
+  "id": "fabric-debug-api-v1",
+  "name": "Fabric Debug API (v1)",
+  "version": "1.0.1+c792624d39",
+  "desc": "A toolkit for registering and using debug subscriptions and other debug tools Mojang have created.",
+  "src": "fabric-debug-api-v1-1.0.1+c792624d39-bc1d4f26001eb64b.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-debug-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-registry-sync-v0"
+  ]
+ },
+ {
+  "id": "fabric-item-groups-v0",
+  "name": "Fabric Item Groups (v0)",
+  "version": "0.2.7+2868a2287d",
+  "desc": "An API for adding custom item groups.",
+  "src": "fabric-item-groups-v0-0.2.7+2868a2287d-e0b9de782c8e86cb.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-item-groups-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-api-base",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "fabric-key-mapping-api-v1",
+  "name": "Fabric Key Mapping API (v1)",
+  "version": "2.0.4+e2bdee7839",
+  "desc": "Key Mapping registry API.",
+  "src": "fabric-key-mapping-api-v1-2.0.4+e2bdee7839-b55c071cd2e78247.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-key-mapping-api-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-loot-tables-v1",
+  "name": "Fabric Loot Tables (v1)",
+  "version": "1.0.2+ca58154a7d",
+  "desc": "Hooks for manipulating loot tables.",
+  "src": "fabric-loot-tables-v1-1.0.2+ca58154a7d-557fcf8a3657269c.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-loot-tables-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-mining-levels-v0",
+  "name": "Fabric Mining Levels (v0)",
+  "version": "0.1.3+ca58154a7d",
+  "desc": "Block mining level tags for tools. Deprecated and replaced by fabric-tool-attribute-v1.",
+  "src": "fabric-mining-levels-v0-0.1.3+ca58154a7d-609865ec93df9fcf.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "deprecated"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-mining-levels-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-tag-extensions-v0",
+   "fabric-tool-attribute-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-models-v0",
+  "name": "Fabric Models (v0)",
+  "version": "0.3.0+bc7a746f7d",
+  "desc": "Hooks for models and model loading.",
+  "src": "fabric-models-v0-0.3.0+bc7a746f7d-d69ed337501c7fb3.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-models-v0/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-networking-blockentity-v0",
+  "name": "Fabric Networking Block Entity (v0)",
+  "version": "0.2.8+ca58154a7d",
+  "desc": "Networking hooks for block entities.",
+  "src": "fabric-networking-blockentity-v0+ca58154a7d-d0f44a612f9483d9.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-networking-blockentity-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-object-builders-v0",
+  "name": "Fabric Object Builders (v0)",
+  "version": "0.7.2+ca58154a7d",
+  "desc": "Legacy builders for objects vanilla has locked down, superseded by fabric-object-builder-api-v1.",
+  "src": "fabric-object-builders-v0-0.7.2+ca58154a7d-405e742708789a34.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "deprecated"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-object-builders-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-object-builder-api-v1"
+  ]
+ },
+ {
+  "id": "fabric-renderer-registries-v1",
+  "name": "Fabric Renderer Registries (v1)",
+  "version": "2.3.0+2868a2287d",
+  "desc": "Registries for entity and block renderers.",
+  "src": "fabric-renderer-registries-v1-2.+2868a2287d-1e9fc0d5f82d61a8.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/renderer-registries-v1/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-resource-loader-v1",
+  "name": "Fabric Resource Loader (v1)",
+  "version": "1.0.10+78c8b4663e",
+  "desc": "Asset and data resource loading.",
+  "src": "fabric-resource-loader-v1-1.0.10+78c8b4663e-cf77ab1cb7b42be8.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/server/MinecraftServer": [
+     "net/fabricmc/fabric/api/resource/v1/DataResourceStore"
+    ],
+    "net/minecraft/server/packs/resources/Resource": [
+     "net/fabricmc/fabric/api/resource/v1/FabricResource"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-resource-loader-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-serialization-api-v1",
+  "name": "Fabric Serialization API (v1)",
+  "version": "1.0.5+4ebb5c083e",
+  "desc": "Extensions for improved serialization.",
+  "src": "fabric-serialization-api-v1-1.0.+4ebb5c083e-4096d7df63eaef3d.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable",
+   "loom:injected_interfaces": {
+    "net/minecraft/class_11368": [
+     "net/fabricmc/fabric/api/serialization/v1/view/FabricReadView"
+    ],
+    "net/minecraft/class_11372": [
+     "net/fabricmc/fabric/api/serialization/v1/view/FabricWriteView"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-serialization-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "fabric-structure-api-v1",
+  "name": "Fabric Structure API (v1)",
+  "version": "1.1.4+ca58154a7d",
+  "desc": "Hooks for registering custom structures.",
+  "src": "fabric-structure-api-v1-1.1.4+ca58154a7d-fb95025e9eff6c4b.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-structure-api-v1/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "fabric-tag-extensions-v0",
+  "name": "Fabric Tag Extensions (v0)",
+  "version": "1.1.1+ca58154a7d",
+  "desc": "Hooks for tags.",
+  "src": "fabric-tag-extensions-v0-1.1.1+ca58154a7d-d3dbef1541f55a3d.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-tag-extensions-v0/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base",
+   "fabric-resource-loader-v0",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "fabric-textures-v0",
+  "name": "Fabric Textures (v0)",
+  "version": "1.0.6+ca58154a7d",
+  "desc": "Hooks for texture loading and registration.",
+  "src": "fabric-textures-v0-1.0.6+ca58154a7d-94ccd132e8b1b2f1.jar",
+  "entrypoints": [],
+  "authors": [
+   "FabricMC"
+  ],
+  "custom": {
+   "fabric-api:module-lifecycle": "stable"
+  },
+  "contact": {
+   "homepage": "https://fabricmc.net",
+   "irc": "irc://irc.esper.net:6667/fabric",
+   "issues": "https://github.com/FabricMC/fabric/issues",
+   "sources": "https://github.com/FabricMC/fabric"
+  },
+  "license": [
+   "Apache-2.0"
+  ],
+  "icon": "assets/fabric-textures-v0/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "fabric-api-base"
+  ]
+ },
+ {
+  "id": "mixinextras",
+  "name": "MixinExtras",
+  "version": "0.3.6",
+  "desc": "Companion library to Mixin with lots of features to improve the compatibility and concision of your mixins!",
+  "src": "figura-0.1.5b+1.21.4--faafd8ea5c6d8fc1.jar!META-INF/jars/mixinextras-fabric-0.3.6.jar",
+  "entrypoints": [],
+  "authors": [
+   "LlamaLad7"
+  ],
+  "custom": {
+   "modmenu": {
+    "badges": [
+     "library"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://github.com/LlamaLad7/MixinExtras",
+   "sources": "https://github.com/LlamaLad7/MixinExtras"
+  },
+  "license": [
+   "MIT"
+  ],
+  "icon": null,
+  "environment": "*",
+  "provides": [
+   "com_github_llamalad7_mixinextras"
+  ],
+  "depends": [
+   "fabricloader"
+  ]
+ },
+ {
+  "id": "io_netty_netty-codec-socks",
+  "name": "netty-codec-socks",
+  "version": "4.1.118",
+  "desc": "",
+  "src": "io_netty_netty-codec-socks-4.1.118-2750576fda3fb471.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "io_netty_netty-handler-proxy",
+  "name": "netty-handler-proxy",
+  "version": "4.1.118",
+  "desc": "",
+  "src": "io_netty_netty-handler-proxy-4.1.118-78a401774a3ed848.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "meteordevelopment_discord-ipc",
+  "name": "discord-ipc",
+  "version": "1.1",
+  "desc": "",
+  "src": "meteordevelopment_discord-ipc-1.1-3c4fa8450c49153b.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "meteordevelopment_orbit",
+  "name": "orbit",
+  "version": "0.2.3",
+  "desc": "",
+  "src": "meteordevelopment_orbit-0.2.3-e523fc6821fd3d2a.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_java_dev_jna_jna",
+  "name": "jna",
+  "version": "5.14.0",
+  "desc": "",
+  "src": "net_java_dev_jna_jna-5.14.0-6083ca9e90ed5fac.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "net_openhft_zero-allocation-hashing",
+  "name": "zero-allocation-hashing",
+  "version": "0.16",
+  "desc": "",
+  "src": "net_openhft_zero-allocation-hashing-0.16-7839be4afed00744.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_apache_commons_commons-lang3",
+  "name": "commons-lang3",
+  "version": "3.18.0",
+  "desc": "",
+  "src": "org_apache_commons_commons-lang3-3.18.0-62595bd5f36c727.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_apache_logging_log4j_log4j-api",
+  "name": "log4j-api",
+  "version": "2.24.1",
+  "desc": "",
+  "src": "org_apache_logging_log4j_log4j-api-2.24.1-f5b985a6c6ad6da8.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_java-websocket_java-websocket",
+  "name": "Java-WebSocket",
+  "version": "1.5.6",
+  "desc": "",
+  "src": "org_java-websocket_java-websocket-1.5.6-89272778ad3c14b7.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_javassist_javassist",
+  "name": "javassist",
+  "version": "3.28.0-GA",
+  "desc": "",
+  "src": "org_javassist_javassist-3.28.0-GA-6853da6b8d70c514.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_jetbrains_kotlinx_kotlinx-serialization-core-jvm",
+  "name": "kotlinx-serialization-core-jvm",
+  "version": "1.6.3",
+  "desc": "",
+  "src": "org_jetbrains_kotlinx_kotlinx-see-jvm-1.6.3-3c1769386dbfa805.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_jetbrains_kotlin_kotlin-stdlib",
+  "name": "kotlin-stdlib",
+  "version": "1.9.22",
+  "desc": "",
+  "src": "org_jetbrains_kotlin_kotlin-stdlib-1.9.22-15d961094529a964.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_json_json",
+  "name": "json",
+  "version": "20250107",
+  "desc": "",
+  "src": "org_json_json-20250107-f68e6f2316e0fc8f.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_jsoup_jsoup",
+  "name": "jsoup",
+  "version": "1.18.3",
+  "desc": "",
+  "src": "org_jsoup_jsoup-1.18.3-330e920c5e3e4423.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_reflections_reflections",
+  "name": "reflections",
+  "version": "0.10.2",
+  "desc": "",
+  "src": "org_reflections_reflections-0.10.2-1242e69f5be78cc9.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "org_slf4j_slf4j-api",
+  "name": "slf4j-api",
+  "version": "2.0.6",
+  "desc": "",
+  "src": "org_slf4j_slf4j-api-2.0.6-a5fa235f0c669956.jar",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {
+   "fabric-loom:generated": true
+  },
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "placeholder-api",
+  "name": "Placeholder API",
+  "version": "2.5.1+1.21.3",
+  "desc": "Simple api for mods allowing for user friendly formatting and universal placeholders!",
+  "src": "placeholder-api-2.5.1+1.21.3-669bbb9036017d1b.jar",
+  "entrypoints": [],
+  "authors": [
+   "Patbox"
+  ],
+  "custom": {
+   "modmenu": {
+    "badges": [
+     "library"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://pb4.eu",
+   "sources": "https://github.com/Patbox/TextPlaceholderAPI"
+  },
+  "license": [
+   "LGPLv3"
+  ],
+  "icon": "assets/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "viaversion",
+  "name": "ViaVersion",
+  "version": "5.2.0",
+  "desc": "Allows the connection of newer clients to older server versions for Minecraft servers.",
+  "src": "viaversion-5.2.0-21b3c52afec1c11e.jar",
+  "entrypoints": [],
+  "authors": [
+   "_MylesC",
+   "creeper123123321",
+   "Gerrygames",
+   "kennytv",
+   "Matsv",
+   "EnZaXD",
+   "RK_01"
+  ],
+  "custom": {
+   "modmenu:api": true,
+   "modmenu": {
+    "badges": [
+     "library"
+    ],
+    "parent": "viafabric"
+   }
+  },
+  "contact": {
+   "homepage": "https://viaversion.com/",
+   "issues": "https://github.com/ViaVersion/ViaVersion/issues",
+   "sources": "https://github.com/ViaVersion/ViaVersion"
+  },
+  "license": [
+   "GPL-3.0"
+  ],
+  "icon": "assets/viaversion/textures/squarelogo.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "viafabric"
+  ]
+ },
+ {
+  "id": "voicechat_api",
+  "name": "Simple Voice Chat API",
+  "version": "2.6.13",
+  "desc": "",
+  "src": "voicechat_api-2.6.13-99f067a213dea88d.jar",
+  "entrypoints": [],
+  "authors": [
+   "Max Henkel"
+  ],
+  "custom": {
+   "modmenu": {
+    "badges": [
+     "library"
+    ],
+    "parent": {
+     "id": "voicechat"
+    }
+   }
+  },
+  "contact": {
+   "homepage": "https://voicechat.modrepo.de/"
+  },
+  "license": [],
+  "icon": "icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "viafabricplus",
+  "name": "ViaFabricPlus",
+  "version": "4.0.5-BACKPORT",
+  "desc": "Fabric mod to connect to EVERY Minecraft server version (Release, Beta, Alpha, Classic, Snapshots, Bedrock) with QoL fixes to the gameplay",
+  "src": "ViaFabricPlus-4.0.5-BACKPORT.jar",
+  "entrypoints": [],
+  "authors": [
+   "FlorianMichael/EnZaXD",
+   "RK_01"
+  ],
+  "custom": {
+   "vfp:implVersion": "git-viafabricplus-4.0.5-BACKPORT:ca43e3e5"
+  },
+  "contact": {
+   "homepage": "https://florianmichael.de/",
+   "sources": "https://github.com/ViaVersion/ViaFabricPlus",
+   "issues": "https://github.com/ViaVersion/ViaFabricPlus/issues",
+   "email": "florian.michael07@gmail.com"
+  },
+  "license": [
+   "GPL-v3"
+  ],
+  "icon": "assets/viafabricplus/icon.png",
+  "environment": "client",
+  "provides": [
+   "viaversion",
+   "viabackwards"
+  ],
+  "depends": [
+   "fabric-resource-loader-v0",
+   "fabric-networking-api-v1",
+   "fabric-command-api-v2",
+   "fabric-lifecycle-events-v1",
+   "fabric-particles-v1",
+   "fabric-registry-sync-v0",
+   "minecraft",
+   "java"
+  ]
+ },
+ {
+  "id": "modmenu",
+  "name": "Mod Menu",
+  "version": "13.0.4",
+  "desc": "Adds a mod menu to view the list of mods you have installed.",
+  "src": "modmenu-13.0.4 (1).jar",
+  "entrypoints": [
+   [
+    "client",
+    "com.terraformersmc.modmenu.ModMenu"
+   ],
+   [
+    "modmenu",
+    "com.terraformersmc.modmenu.ModMenuModMenuCompat"
+   ]
+  ],
+  "authors": [
+   "Prospector",
+   "haykam821",
+   "TerraformersMC"
+  ],
+  "custom": {
+   "modmenu": {
+    "links": {
+     "modmenu.discord": "https://discord.gg/jEGF5fb"
+    }
+   }
+  },
+  "contact": {
+   "homepage": "https://modrinth.com/mod/modmenu",
+   "sources": "https://github.com/TerraformersMC/ModMenu",
+   "issues": "https://github.com/TerraformersMC/ModMenu/issues"
+  },
+  "license": [
+   "MIT"
+  ],
+  "icon": "assets/modmenu/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabric-resource-loader-v0",
+   "fabric-screen-api-v1",
+   "fabric-key-binding-api-v1",
+   "fabric-lifecycle-events-v1",
+   "fabricloader",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "sodium-extra",
+  "name": "Sodium Extra",
+  "version": "0.8.6+mc26.1.1",
+  "desc": "Features that shouldn't be in Sodium.",
+  "src": "sodium-extra-fabric-0.8.6+mc26.1.1.jar",
+  "entrypoints": [
+   [
+    "sodium:config_api_user",
+    "me.flashyreese.mods.sodiumextra.client.config.SodiumExtraConfig"
+   ]
+  ],
+  "authors": [
+   "FlashyReese"
+  ],
+  "custom": {
+   "modmenu": {
+    "parent": {
+     "id": "sodium"
+    },
+    "links": {
+     "modmenu.crowdin": "https://crowdin.com/project/sodium-extra",
+     "modmenu.curseforge": "https://curseforge.com/minecraft/mc-mods/sodium-extra",
+     "modmenu.discord": "https://flashyreese.me/discord",
+     "modmenu.donate": "https://ko-fi.com/flashyreese",
+     "modmenu.github_releases": "https://github.com/FlashyReese/sodium-extra-fabric/releases",
+     "modmenu.kofi": "https://ko-fi.com/flashyreese",
+     "modmenu.modrinth": "https://modrinth.com/mod/sodium-extra"
+    }
+   }
+  },
+  "contact": {
+   "homepage": "https://modrinth.com/mod/sodium-extra",
+   "sources": "https://github.com/FlashyReese/sodium-extra-fabric",
+   "issues": "https://github.com/FlashyReese/sodium-extra-fabric/issues"
+  },
+  "license": [
+   "LGPLv3"
+  ],
+  "icon": "assets/sodium-extra/textures/icon.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "sodium",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "sodium",
+  "name": "Sodium",
+  "version": "0.8.9+mc26.1.1",
+  "desc": "Sodium is a powerful rendering engine for Minecraft which greatly improves frame rates and micro-stutter, while fixing many graphical issues",
+  "src": "sodium-fabric-0.8.9+mc26.1.1.jar",
+  "entrypoints": [
+   [
+    "client",
+    "net.caffeinemc.mods.sodium.fabric.SodiumFabricMod"
+   ],
+   [
+    "preLaunch",
+    "net.caffeinemc.mods.sodium.fabric.SodiumPreLaunch"
+   ]
+  ],
+  "authors": [
+   "JellySquid (jellysquid3)"
+  ],
+  "custom": {
+   "fabric-renderer-api-v1:contains_renderer": true,
+   "modmenu": {
+    "links": {
+     "modmenu.donate": "https://caffeinemc.net/donate",
+     "modmenu.discord": "https://caffeinemc.net/discord",
+     "modmenu.github_releases": "https://github.com/CaffeineMC/sodium/releases",
+     "modmenu.kofi": "https://caffeinemc.net/donate",
+     "modmenu.modrinth": "https://modrinth.com/mod/sodium"
+    }
+   }
+  },
+  "contact": {
+   "homepage": "https://github.com/CaffeineMC/sodium",
+   "sources": "https://github.com/CaffeineMC/sodium",
+   "issues": "https://github.com/CaffeineMC/sodium/issues"
+  },
+  "license": [
+   "Polyform-Shield-1.0.0"
+  ],
+  "icon": "sodium-icon.png",
+  "environment": "client",
+  "provides": [
+   "indium"
+  ],
+  "depends": [
+   "fabricloader",
+   "fabric-block-getter-api-v2",
+   "fabric-rendering-fluids-v1",
+   "fabric-resource-loader-v0"
+  ]
+ },
+ {
+  "id": "baritone",
+  "name": "Baritone",
+  "version": "1.13.1",
+  "desc": "Google Maps for Blockgame",
+  "src": "DeviceClient.jar!META-INF/jars/baritone-standalone-fabric-1.13.1.jar",
+  "entrypoints": [],
+  "authors": [
+   "leijurv",
+   "Brady"
+  ],
+  "custom": {
+   "modmenu": {
+    "links": {
+     "modmenu.discord": "https://discord.gg/s6fRBAUpmr"
+    }
+   }
+  },
+  "contact": {
+   "homepage": "https://github.com/cabaletta/baritone",
+   "sources": "https://github.com/cabaletta/baritone",
+   "issues": "https://github.com/cabaletta/baritone/issues"
+  },
+  "license": [
+   "LGPL-3.0"
+  ],
+  "icon": "assets/baritone/icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft"
+  ]
+ },
+ {
+  "id": "iris",
+  "name": "Iris",
+  "version": "1.8.8+mc1.21.4",
+  "desc": "A modern shaders mod for Minecraft intended to be compatible with existing OptiFine shader packs",
+  "src": "iris-fabric-1.8.8+mc1.21.4.jar",
+  "entrypoints": [
+   [
+    "modmenu",
+    "net.irisshaders.iris.compat.modmenu.ModMenuIntegration"
+   ]
+  ],
+  "authors": [
+   "coderbot",
+   "IMS212",
+   "Justsnoopy30",
+   "FoundationGames"
+  ],
+  "custom": {
+   "sodium:options": {
+    "mixin.features.render.world.sky": false
+   },
+   "mc-publish": {
+    "loaders": [
+     "fabric",
+     "quilt"
+    ]
+   }
+  },
+  "contact": {
+   "homepage": "https://github.com/IrisShaders/Iris",
+   "sources": "https://github.com/IrisShaders/Iris.git",
+   "issues": "https://github.com/IrisShaders/Iris/issues"
+  },
+  "license": [
+   "LGPL-3.0-only"
+  ],
+  "icon": "iris-logo.png",
+  "environment": "client",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "sodium"
+  ]
+ },
+ {
+  "id": "voicechat",
+  "name": "Simple Voice Chat",
+  "version": "1.16.5-2.6.12",
+  "desc": "A working voice chat in Minecraft!",
+  "src": "voicechat-fabric-1.16.5-2.6.12.jar",
+  "entrypoints": [
+   [
+    "client",
+    "de.maxhenkel.voicechat.FabricVoicechatClientMod"
+   ],
+   [
+    "main",
+    "de.maxhenkel.voicechat.FabricVoicechatMod"
+   ],
+   [
+    "modmenu",
+    "de.maxhenkel.voicechat.integration.ModMenu"
+   ]
+  ],
+  "authors": [
+   "Max Henkel"
+  ],
+  "custom": {
+   "modmenu": {
+    "links": {
+     "modmenu.discord": "https://discord.gg/4dH2zwTmyX"
+    }
+   },
+   "multiconnect": {
+    "custom_payloads": {
+     "allowed_clientbound": "voicechat:*",
+     "allowed_serverbound": "voicechat:*",
+     "clientbound_112_names": {
+      "voicechat:update_state": "vc:update_state",
+      "voicechat:request_secret": "vc:request_secret",
+      "voicechat:create_group": "vc:create_group",
+      "voicechat:set_group": "vc:set_group",
+      "voicechat:leave_group": "vc:leave_group"
+     },
+     "serverbound_112_names": {
+      "voicechat:secret": "vc:secret",
+      "voicechat:state": "vc:state",
+      "voicechat:states": "vc:states",
+      "voicechat:remove_state": "vc:remove_state",
+      "voicechat:add_group": "vc:add_group",
+      "voicechat:remove_group": "vc:remove_group",
+      "voicechat:joined_group": "vc:joined_group",
+      "voicechat:add_category": "vc:add_category",
+      "voicechat:remove_category": "vc:remove_category"
+     }
+    }
+   }
+  },
+  "contact": {
+   "homepage": "https://modrepo.de/minecraft/voicechat/overview",
+   "issues": "https://github.com/henkelmax/simple-voice-chat/issues",
+   "sources": "https://github.com/henkelmax/simple-voice-chat",
+   "discord": "https://discord.gg/4dH2zwTmyX"
+  },
+  "license": [
+   "All Rights Reserved"
+  ],
+  "icon": "icon.png",
+  "environment": "*",
+  "provides": [],
+  "depends": [
+   "fabricloader",
+   "minecraft",
+   "java"
+  ]
+ },
+ {
+  "id": "nurikware",
+  "name": "NurikWare Client",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "client",
+    "NurikWare.class09676"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "proxyserver",
+  "name": "ProxyServer",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "main",
+    "ru.fiw.proxyserver.ProxyServer"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "lithium",
+  "name": "Lithium",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "main",
+    "net.caffeinemc.mods.lithium.fabric.LithiumFabricMod"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "appleskin",
+  "name": "AppleSkin",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "main",
+    "squeek.appleskin.AppleSkinCommon"
+   ],
+   [
+    "client",
+    "squeek.appleskin.AppleSkin"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "languagereload",
+  "name": "Language Reload",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "client",
+    "jerozgen.languagereload.LanguageReload"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "ok_zoomer",
+  "name": "Ok Zoomer",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "client",
+    "page.langeweile.ok_zoomer.OkZoomerClientMod"
+   ],
+   [
+    "preLaunch",
+    "page.langeweile.ok_zoomer.OkZoomerPreLaunchMod"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "yet_another_config_lib_v3",
+  "name": "YetAnotherConfigLib",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "client",
+    "dev.isxander.yacl3.platform.PlatformEntrypoint"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "compactchat",
+  "name": "CompactChat",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "client",
+    "dev.caoimhe.compactchat.CompactChatMod"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "armorhud",
+  "name": "Simple Armor HUD",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [
+   [
+    "client",
+    "com.armorhud.armorHud"
+   ]
+  ],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "reeses-sodium-options",
+  "name": "Reese's Sodium Options",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "client",
+  "provides": [],
+  "depends": []
+ },
+ {
+  "id": "cloth-config2",
+  "name": "Cloth Config v2",
+  "version": "1.0.0",
+  "desc": "",
+  "src": "fat",
+  "entrypoints": [],
+  "authors": [],
+  "custom": {},
+  "contact": {},
+  "license": [],
+  "icon": null,
+  "environment": "*",
+  "provides": [],
+  "depends": []
+ }
+]

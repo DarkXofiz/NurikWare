@@ -1,0 +1,84 @@
+name: Bootstrap (decompile)
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "src/main/java doluysa sil ve yeniden olustur (elle duzenlemeleri siler)"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Repo'yu cek
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: JDK 21 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Python 3.12 kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: original/NurikWare.jar var mi, boyutu ve zip bütünlüğü kontrolu
+        run: |
+          set -e
+          if [ ! -f original/NurikWare.jar ]; then
+            echo "::error::original/NurikWare.jar yok. Telefonda dosya adini degistirip (GitHub web UI DEGIL) bu klasore yukle."
+            exit 1
+          fi
+          SIZE=$(stat -c%s original/NurikWare.jar)
+          echo "jar boyutu: $SIZE byte"
+          if [ "$SIZE" -lt 1000000 ]; then
+            echo "::error::jar sadece $SIZE byte, upload bozuk olabilir (beklenen ~50-60 MB)."
+            exit 1
+          fi
+          python3 tools/verify_jar.py
+
+      - name: Gradle wrapper uret
+        run: |
+          set -e
+          mkdir -p /tmp/gradle-bootstrap
+          cat > /tmp/gradle-bootstrap/settings.gradle <<'EOF'
+          rootProject.name = 'wrapper-bootstrap'
+          EOF
+          cd /tmp/gradle-bootstrap
+          GRADLE_VERSION=8.14.2
+          curl -sL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o gradle.zip
+          unzip -q gradle.zip
+          ./gradle-${GRADLE_VERSION}/bin/gradle wrapper --gradle-version ${GRADLE_VERSION} --distribution-type bin
+          cp -r gradle "$GITHUB_WORKSPACE/"
+          cp gradlew "$GITHUB_WORKSPACE/"
+          cp gradlew.bat "$GITHUB_WORKSPACE/"
+          chmod +x "$GITHUB_WORKSPACE/gradlew"
+
+      - name: Decompile
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          python3 tools/decompile.py $FORCE_FLAG
+
+      - name: Degisiklikleri commit'le
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "degisiklik yok, commit atlanıyor"
+          else
+            git commit -m "bootstrap: gradle wrapper + decompile (otomatik)"
+            git push
+          fi

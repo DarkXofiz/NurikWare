@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "nurikware",
+  "version": "${version}",
+  "name": "NurikWare",
+  "description": "NurikWare Client for Minecraft 1.21.11",
+  "authors": [
+    "NurikWare"
+  ],
+  "contact": {
+    "homepage": "https://nurikware.fun"
+  },
+  "license": "Proprietary",
+  "icon": "assets/nurikware-client/textures/moder.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "nurikware.NurikWareModInit",
+      "NurikWare.class09676"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "1.21.11",
+    "java": ">=21"
+  }
+}

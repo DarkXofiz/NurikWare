@@ -1,0 +1,100 @@
+// build.gradle, Gradle 8.14.2, Fabric Loom 1.13.3, Minecraft 1.21.11, Java 21
+plugins {
+    // MC 1.21.11 unpick V3 formati kullaniyor, bunu sadece Loom 1.13+ destekliyor
+    // (1.9/1.10'da "UnsupportedOperationException: Unsupported unpick version" patlar).
+    // 1.21.11 ayni zamanda Loom'un "obfuscated" olarak isaretledigi SON surum -
+    // bu yuzden hala legacy "fabric-loom" plugin id'si gecerli (yeni surumler
+    // non-obfuscated MC icin "net.fabricmc.fabric-loom" / "fabric-loom-remap" ayrimina gidiyor,
+    // 1.21.11 o ayrimdan once kaliyor).
+    id "fabric-loom" version "1.13.3"
+    id "maven-publish"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    maven { url = "https://maven.fabricmc.net/" }
+    maven { name = "CaffeineMC"; url = "https://maven.caffeinemc.net/releases" }
+    maven { name = "IrisShaders"; url = "https://maven.isxander.dev/releases" }
+    maven { name = "JitPack"; url = "https://jitpack.io" }
+    maven { name = "Modrinth"; url = "https://api.modrinth.com/maven" }
+    maven { name = "Lenni0451"; url = "https://repo.lenni0451.net/releases" }
+    maven { name = "OSS Sonatype"; url = "https://s01.oss.sonatype.org/content/repositories/releases/" }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // --- jar icinde gomulu bulunan ucuncu parti kutuphaneler ---
+    // asagidaki surumler jar MANIFEST/mod.json icinde gecmiyordu, TAHMIN.
+    // build.yml "Hata ozeti" ClassNotFoundException / cannot find symbol verirse
+    // ilgili satirin surumunu degistir. libs/ altindaki ayristirilmis jar'lar
+    // (decompile.py tarafindan uretilir) sadece referans/karsilastirma icindir,
+    // burada dependency olarak KULLANILMAZ.
+
+    // Sodium - CaffeineMC resmi maven (tahmin surum, DECOMPILE_REPORT.md'ye bak)
+    modImplementation "maven.modrinth:sodium:AANobbMI"  // TAHMIN - modrinth version id eslesmiyor olabilir
+    // Lithium
+    modImplementation "maven.modrinth:lithium:gvQqBUqZ"  // TAHMIN
+    // Iris Shaders
+    modImplementation "maven.modrinth:iris:YL57xq9U"  // TAHMIN
+
+    // Lenni0451 kutuphaneleri (reflect, commons) - ViaProxy ekosisteminin parcasi
+    implementation "net.lenni0451:Reflect:1.4.0"  // TAHMIN
+    implementation "net.lenni0451.commons:commons-httpclient:1.7"  // TAHMIN
+
+    // RaphiMC protokol koprusu kutuphaneleri
+    implementation "com.github.RaphiMC:ViaLegacy:master-SNAPSHOT"  // TAHMIN - jitpack
+    implementation "com.github.RaphiMC:ViaBedrock:main-SNAPSHOT"  // TAHMIN - jitpack
+    implementation "com.github.RaphiMC:MinecraftAuth:main-SNAPSHOT"  // TAHMIN - jitpack
+
+    // oshi (sistem bilgisi)
+    implementation "com.github.oshi:oshi-core:6.6.5"  // TAHMIN
+
+    // Kotlin stdlib (jar icinde kotlin/jvm/internal/Intrinsics.class bulundu,
+    // bu da kotlin-stdlib'in kucuk bir parcasi gomulu demek)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.0.21"  // TAHMIN
+
+    // Baritone - jar icinde top-level "baritone/" paketi var, resmi fabric build
+    // genelde jitpack'te. Surum/branch bilinmiyor.
+    implementation "com.github.cabaletta:baritone:1.21.11-fabric-SNAPSHOT"  // TAHMIN - jitpack
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+def targetJavaVersion = 21
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+    it.options.release = targetJavaVersion
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.base.archivesName.get()}" }
+    }
+    // libs/ altindaki gomulu kutuphaneleri derleme-zamani stub olarak degil,
+    // gercek bagimlilik olarak cozdugumuz icin burada ayrica embed etmiyoruz.
+    // Eger bir kutuphane icin gercek maven koordinati BULUNAMAZSA (jitpack/modrinth'te yoksa),
+    // libs/<lib>.jar dosyasini asagidaki gibi dogrudan jar'a gom:
+    // from(zipTree("libs/baritone.jar"))
+}
