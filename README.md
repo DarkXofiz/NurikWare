@@ -48,3 +48,12 @@ satırı `build.gradle`'da güncelle.
 ## Lisans
 
 Proprietary → açık kaynak geçişi yazarın (NurikWare Team) izniyle yapıldı.
+
+## NurikWare.jar nasil uretilir (derleme gerekmez)
+
+Kaynak kod, orijinal jar icindeki ozel Minecraft kopyasina (`minecraft.classNNNNN`) bagli
+oldugu icin Gradle ile derlenemez. Bunun yerine:
+
+    python3 tools/repack.py original/NurikWare.jar NurikWare.jar
+
+Ya da GitHub Actions -> **Repack (NurikWare.jar)** -> Run workflow. Cikti: Artifacts -> `nurikware-jar`.

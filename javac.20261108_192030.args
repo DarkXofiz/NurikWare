@@ -1,0 +1,9 @@
+-proc:none
+-Xmaxerrs
+100000
+-nowarn
+-cp
+original/NurikWare.jar
+-d
+/tmp/o
+@/tmp/srcs.txt
