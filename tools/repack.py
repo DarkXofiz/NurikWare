@@ -66,6 +66,58 @@ def rewrite_class(data: bytes) -> bytes:
     return b"".join(out)
 
 
+# --- Telefon uyumlulugu: client'in instanced GL cagrilarini PhoneCompat'a yonlendir ---
+GL_TARGETS = {b"glVertexAttribDivisor", b"glDrawElementsInstanced", b"glDrawArraysInstanced"}
+GL_OWNER = b"org/lwjgl/opengl/GL33"
+COMPAT_CLASS = b"NurikWare/PhoneCompat"
+
+
+def patch_gl(data: bytes) -> bytes:
+    if b"AttribDivisor" not in data and b"Instanced" not in data:
+        return data
+    count = struct.unpack(">H", data[8:10])[0]
+    pos = 10
+    utf = {}      # index -> bytes
+    cls = {}      # index -> utf index
+    nat = {}      # index -> (name idx, desc idx)
+    mref = []     # (offset, class idx, nat idx)
+    i = 1
+    while i < count:
+        tag = data[pos]
+        if tag == 1:
+            ln = struct.unpack(">H", data[pos + 1:pos + 3])[0]
+            utf[i] = data[pos + 3:pos + 3 + ln]; pos += 3 + ln
+        elif tag == 7:
+            cls[i] = struct.unpack(">H", data[pos + 1:pos + 3])[0]; pos += 3
+        elif tag == 12:
+            nat[i] = struct.unpack(">HH", data[pos + 1:pos + 5]); pos += 5
+        elif tag == 10:
+            a, b = struct.unpack(">HH", data[pos + 1:pos + 5]); mref.append((pos, a, b)); pos += 5
+        elif tag in (3, 4, 9, 11, 17, 18):
+            pos += 5
+        elif tag in (5, 6):
+            pos += 9; i += 1
+        elif tag in (8, 16, 19, 20):
+            pos += 3
+        elif tag == 15:
+            pos += 4
+        else:
+            return data
+        i += 1
+    hits = [off for off, c, n in mref
+            if utf.get(cls.get(c)) == GL_OWNER and n in nat and utf.get(nat[n][0]) in GL_TARGETS]
+    if not hits:
+        return data
+    new_utf, new_cls = count, count + 1
+    buf = bytearray(data)
+    for off in hits:
+        buf[off + 1:off + 3] = struct.pack(">H", new_cls)
+    extra = (b"\x01" + struct.pack(">H", len(COMPAT_CLASS)) + COMPAT_CLASS
+             + b"\x07" + struct.pack(">H", new_utf))
+    buf[8:10] = struct.pack(">H", count + 2)
+    return bytes(buf[:pos]) + extra + bytes(buf[pos:])
+
+
 TEXT_EXT = (".json", ".mcmeta", ".txt", ".properties", ".lang", ".fsh", ".vsh", ".frag",
             ".vert", ".glsl", ".cfg", ".toml", ".yml", ".yaml", ".xml", ".mf", ".md", ".csv")
 
@@ -74,7 +126,7 @@ def main():
     zin = zipfile.ZipFile(SRC)
     zout = zipfile.ZipFile(DST, "w", zipfile.ZIP_DEFLATED, compresslevel=6)
     seen = set()
-    nclass = nres = 0
+    nclass = nres = npatched = 0
     for info in zin.infolist():
         name = info.filename
         if name == "META-INF/INDEX.LIST":
@@ -90,6 +142,11 @@ def main():
         low = name.lower()
         if low.endswith(".class"):
             data = rewrite_class(data); nclass += 1
+            if new_name.startswith(("NurikWare/", "nurikware/")):
+                pdata = patch_gl(data)
+                if pdata is not data:
+                    npatched += 1
+                data = pdata
         elif (low.endswith(TEXT_EXT) or low.startswith("meta-inf/services/")) and len(data) < 5_000_000:
             if b"\x00" not in data[:2000]:
                 data = conv(data); nres += 1
@@ -100,8 +157,14 @@ def main():
         zi.compress_type = zipfile.ZIP_DEFLATED
         zi.external_attr = info.external_attr
         zout.writestr(zi, data)
+    import os
+    compat = os.path.join(os.path.dirname(os.path.abspath(__file__)), "PhoneCompat.class")
+    with open(compat, "rb") as f:
+        zi = zipfile.ZipInfo("NurikWare/PhoneCompat.class", (2026, 1, 1, 0, 0, 0))
+        zi.compress_type = zipfile.ZIP_DEFLATED
+        zout.writestr(zi, f.read())
     zout.close()
-    print("tamam: %d sinif, %d metin kaynagi -> %s" % (nclass, nres, DST))
+    print("tamam: %d sinif, %d metin kaynagi, %d sinifta telefon yamasi -> %s" % (nclass, nres, npatched, DST))
 
 
 if __name__ == "__main__":
