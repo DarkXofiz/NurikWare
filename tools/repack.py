@@ -93,6 +93,9 @@ def main():
         elif (low.endswith(TEXT_EXT) or low.startswith("meta-inf/services/")) and len(data) < 5_000_000:
             if b"\x00" not in data[:2000]:
                 data = conv(data); nres += 1
+                if low.endswith((".fsh", ".vsh", ".frag", ".vert", ".glsl")):
+                    # Mali/MobileGlues (Zalith) 'noperspective' desteklemiyor -> kaldir
+                    data = re.sub(rb"\bnoperspective\s+", b"", data)
         zi = zipfile.ZipInfo(new_name, info.date_time)
         zi.compress_type = zipfile.ZIP_DEFLATED
         zi.external_attr = info.external_attr
