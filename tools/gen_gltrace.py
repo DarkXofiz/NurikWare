@@ -51,7 +51,7 @@ def main(jar):
            "   private static int count; private static FileOutputStream file; private static boolean fileTried;",
            "   private static final Method[] M = new Method[%d];" % len(sigs),
            "   private static void t(String n, Object... a) {",
-           "      count++; if (count > 4000) return;",
+           "      count++; if (count > 20000) return;",
            "      StringBuilder sb = new StringBuilder().append(count).append(' ').append(n).append('(');",
            "      for (int i = 0; i < a.length; i++) { if (i > 0) sb.append(','); Object o = a[i];",
            "         if (o instanceof java.nio.Buffer b) sb.append(b.getClass().getSimpleName()).append('#').append(b.remaining());",
@@ -61,13 +61,21 @@ def main(jar):
            "      sb.append(')'); String line = sb.toString();",
            "      try { if (!fileTried) { fileTried = true; try { file = new FileOutputStream(System.getProperty(\"user.home\", \".\") + \"/nurikware-gltrace.txt\", false); } catch (Throwable e) { } }",
            "         if (file != null) file.write((line + \"\\n\").getBytes()); } catch (Throwable e) { }",
-           "      if (count <= 600) System.out.println(\"[GLTRACE] \" + line);",
+           "      if ((count > 520 && count <= 9000) || n.startsWith(\"!\")) System.out.println(\"[GLTRACE] \" + line);",
+           "   }",
+           "   private static void tr(String n, Object r, Object a0, Object a1) {",
+           "      try { boolean show = false; String s = String.valueOf(r);",
+           "         if (r instanceof String str) { show = str.length() > 0; s = str.length() > 300 ? str.substring(0, 300) : str; s = s.replace('\\n', ' '); }",
+           "         else if ((n.equals(\"glGetShaderi\") && Integer.valueOf(35713).equals(a1) || n.equals(\"glGetProgrami\") && Integer.valueOf(35714).equals(a1)) && Integer.valueOf(0).equals(r)) { show = true; s = \"!!! COMPILE/LINK FAILED for \" + a0; }",
+           "         else if (count > 520 && count <= 9000) show = true;",
+           "         if (show) { String line = \"   = \" + n + \" -> \" + s; if (file != null) { try { file.write((line + \"\\n\").getBytes()); } catch (Throwable e) { } } System.out.println(\"[GLTRACE] \" + line); }",
+           "      } catch (Throwable e) { }",
            "   }",
            "   private static Object call(int idx, String owner, String name, Class<?>[] types, Object[] args) {",
            "      try { Method m = M[idx]; if (m == null) { m = Class.forName(owner).getMethod(name, types); M[idx] = m; }",
            "         return m.invoke(null, args);",
-           "      } catch (java.lang.reflect.InvocationTargetException e) { Throwable c = e.getCause(); if (count <= 4000) t(\"!EXC \" + name + \" \" + c); if (c instanceof RuntimeException r) throw r; if (c instanceof Error er) throw er; throw new RuntimeException(c);",
-           "      } catch (Throwable e) { if (count <= 4000) t(\"!ERR \" + name + \" \" + e); return null; }",
+           "      } catch (java.lang.reflect.InvocationTargetException e) { Throwable c = e.getCause(); t(\"!EXC \" + name + \" \" + c); if (c instanceof RuntimeException r) throw r; if (c instanceof Error er) throw er; throw new RuntimeException(c);",
+           "      } catch (Throwable e) { t(\"!ERR \" + name + \" \" + e); return null; }",
            "   }"]
     for idx, ((nm, ds), owner) in enumerate(sorted(sigs.items())):
         args_d, ret_d = ds[1:].split(")")
@@ -86,9 +94,11 @@ def main(jar):
             defaults = {"int": "0", "long": "0L", "float": "0f", "double": "0d", "boolean": "false", "byte": "0", "short": "0", "char": "0"}
             wrap = {"int": "Integer", "long": "Long", "float": "Float", "double": "Double", "boolean": "Boolean", "byte": "Byte", "short": "Short", "char": "Character"}
             if ret in wrap:
-                body += "      Object r = %s; return r == null ? %s : ((%s) r);" % (callx, defaults[ret], wrap[ret])
+                a0 = "a0" if len(jt) > 0 else "null"; a1 = "a1" if len(jt) > 1 else "null"
+                body += "      Object r = %s; tr(\"%s\", r, %s, %s); return r == null ? %s : ((%s) r);" % (callx, nm, a0, a1, defaults[ret], wrap[ret])
             else:
-                body += "      return (%s) %s;" % (ret, callx)
+                a0 = "a0" if len(jt) > 0 else "null"; a1 = "a1" if len(jt) > 1 else "null"
+                body += "      Object r = %s; tr(\"%s\", r, %s, %s); return (%s) r;" % (callx, nm, a0, a1, ret)
         out.append("   public static %s %s(%s) {\n%s\n   }" % (ret, nm, plist, body))
     out.append("}")
     open(os.path.join(HERE, "gltrace_sigs.txt"), "w").write("\n".join("%s %s" % k for k in sorted(sigs)) + "\n")

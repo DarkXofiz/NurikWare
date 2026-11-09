@@ -6,7 +6,7 @@ public final class GLTrace {
    private static int count; private static FileOutputStream file; private static boolean fileTried;
    private static final Method[] M = new Method[77];
    private static void t(String n, Object... a) {
-      count++; if (count > 4000) return;
+      count++; if (count > 20000) return;
       StringBuilder sb = new StringBuilder().append(count).append(' ').append(n).append('(');
       for (int i = 0; i < a.length; i++) { if (i > 0) sb.append(','); Object o = a[i];
          if (o instanceof java.nio.Buffer b) sb.append(b.getClass().getSimpleName()).append('#').append(b.remaining());
@@ -16,13 +16,21 @@ public final class GLTrace {
       sb.append(')'); String line = sb.toString();
       try { if (!fileTried) { fileTried = true; try { file = new FileOutputStream(System.getProperty("user.home", ".") + "/nurikware-gltrace.txt", false); } catch (Throwable e) { } }
          if (file != null) file.write((line + "\n").getBytes()); } catch (Throwable e) { }
-      if (count <= 600) System.out.println("[GLTRACE] " + line);
+      if ((count > 520 && count <= 9000) || n.startsWith("!")) System.out.println("[GLTRACE] " + line);
+   }
+   private static void tr(String n, Object r, Object a0, Object a1) {
+      try { boolean show = false; String s = String.valueOf(r);
+         if (r instanceof String str) { show = str.length() > 0; s = str.length() > 300 ? str.substring(0, 300) : str; s = s.replace('\n', ' '); }
+         else if ((n.equals("glGetShaderi") && Integer.valueOf(35713).equals(a1) || n.equals("glGetProgrami") && Integer.valueOf(35714).equals(a1)) && Integer.valueOf(0).equals(r)) { show = true; s = "!!! COMPILE/LINK FAILED for " + a0; }
+         else if (count > 520 && count <= 9000) show = true;
+         if (show) { String line = "   = " + n + " -> " + s; if (file != null) { try { file.write((line + "\n").getBytes()); } catch (Throwable e) { } } System.out.println("[GLTRACE] " + line); }
+      } catch (Throwable e) { }
    }
    private static Object call(int idx, String owner, String name, Class<?>[] types, Object[] args) {
       try { Method m = M[idx]; if (m == null) { m = Class.forName(owner).getMethod(name, types); M[idx] = m; }
          return m.invoke(null, args);
-      } catch (java.lang.reflect.InvocationTargetException e) { Throwable c = e.getCause(); if (count <= 4000) t("!EXC " + name + " " + c); if (c instanceof RuntimeException r) throw r; if (c instanceof Error er) throw er; throw new RuntimeException(c);
-      } catch (Throwable e) { if (count <= 4000) t("!ERR " + name + " " + e); return null; }
+      } catch (java.lang.reflect.InvocationTargetException e) { Throwable c = e.getCause(); t("!EXC " + name + " " + c); if (c instanceof RuntimeException r) throw r; if (c instanceof Error er) throw er; throw new RuntimeException(c);
+      } catch (Throwable e) { t("!ERR " + name + " " + e); return null; }
    }
    public static void glActiveTexture(int a0) {
       t("glActiveTexture", a0);
@@ -74,11 +82,11 @@ public final class GLTrace {
    }
    public static int glCreateProgram() {
       t("glCreateProgram");
-      Object r = call(12, "org.lwjgl.opengl.GL31", "glCreateProgram", new Class<?>[]{}, new Object[]{}); return r == null ? 0 : ((Integer) r);
+      Object r = call(12, "org.lwjgl.opengl.GL31", "glCreateProgram", new Class<?>[]{}, new Object[]{}); tr("glCreateProgram", r, null, null); return r == null ? 0 : ((Integer) r);
    }
    public static int glCreateShader(int a0) {
       t("glCreateShader", a0);
-      Object r = call(13, "org.lwjgl.opengl.GL31", "glCreateShader", new Class<?>[]{int.class}, new Object[]{a0}); return r == null ? 0 : ((Integer) r);
+      Object r = call(13, "org.lwjgl.opengl.GL31", "glCreateShader", new Class<?>[]{int.class}, new Object[]{a0}); tr("glCreateShader", r, a0, null); return r == null ? 0 : ((Integer) r);
    }
    public static void glDeleteFramebuffers(int a0) {
       t("glDeleteFramebuffers", a0);
@@ -130,11 +138,11 @@ public final class GLTrace {
    }
    public static int glGenBuffers() {
       t("glGenBuffers");
-      Object r = call(26, "org.lwjgl.opengl.GL33", "glGenBuffers", new Class<?>[]{}, new Object[]{}); return r == null ? 0 : ((Integer) r);
+      Object r = call(26, "org.lwjgl.opengl.GL33", "glGenBuffers", new Class<?>[]{}, new Object[]{}); tr("glGenBuffers", r, null, null); return r == null ? 0 : ((Integer) r);
    }
    public static int glGenFramebuffers() {
       t("glGenFramebuffers");
-      Object r = call(27, "org.lwjgl.opengl.GL30", "glGenFramebuffers", new Class<?>[]{}, new Object[]{}); return r == null ? 0 : ((Integer) r);
+      Object r = call(27, "org.lwjgl.opengl.GL30", "glGenFramebuffers", new Class<?>[]{}, new Object[]{}); tr("glGenFramebuffers", r, null, null); return r == null ? 0 : ((Integer) r);
    }
    public static void glGenQueries(int[] a0) {
       t("glGenQueries", a0);
@@ -142,15 +150,15 @@ public final class GLTrace {
    }
    public static int glGenSamplers() {
       t("glGenSamplers");
-      Object r = call(29, "org.lwjgl.opengl.GL33", "glGenSamplers", new Class<?>[]{}, new Object[]{}); return r == null ? 0 : ((Integer) r);
+      Object r = call(29, "org.lwjgl.opengl.GL33", "glGenSamplers", new Class<?>[]{}, new Object[]{}); tr("glGenSamplers", r, null, null); return r == null ? 0 : ((Integer) r);
    }
    public static int glGenTextures() {
       t("glGenTextures");
-      Object r = call(30, "org.lwjgl.opengl.GL30", "glGenTextures", new Class<?>[]{}, new Object[]{}); return r == null ? 0 : ((Integer) r);
+      Object r = call(30, "org.lwjgl.opengl.GL30", "glGenTextures", new Class<?>[]{}, new Object[]{}); tr("glGenTextures", r, null, null); return r == null ? 0 : ((Integer) r);
    }
    public static int glGenVertexArrays() {
       t("glGenVertexArrays");
-      Object r = call(31, "org.lwjgl.opengl.GL33", "glGenVertexArrays", new Class<?>[]{}, new Object[]{}); return r == null ? 0 : ((Integer) r);
+      Object r = call(31, "org.lwjgl.opengl.GL33", "glGenVertexArrays", new Class<?>[]{}, new Object[]{}); tr("glGenVertexArrays", r, null, null); return r == null ? 0 : ((Integer) r);
    }
    public static void glGenerateMipmap(int a0) {
       t("glGenerateMipmap", a0);
@@ -158,7 +166,7 @@ public final class GLTrace {
    }
    public static java.lang.String glGetActiveUniform(int a0, int a1, java.nio.IntBuffer a2, java.nio.IntBuffer a3) {
       t("glGetActiveUniform", a0, a1, a2, a3);
-      return (java.lang.String) call(33, "org.lwjgl.opengl.GL31", "glGetActiveUniform", new Class<?>[]{int.class, int.class, java.nio.IntBuffer.class, java.nio.IntBuffer.class}, new Object[]{a0, a1, a2, a3});
+      Object r = call(33, "org.lwjgl.opengl.GL31", "glGetActiveUniform", new Class<?>[]{int.class, int.class, java.nio.IntBuffer.class, java.nio.IntBuffer.class}, new Object[]{a0, a1, a2, a3}); tr("glGetActiveUniform", r, a0, a1); return (java.lang.String) r;
    }
    public static void glGetAttachedShaders(int a0, java.nio.IntBuffer a1, java.nio.IntBuffer a2) {
       t("glGetAttachedShaders", a0, a1, a2);
@@ -166,7 +174,7 @@ public final class GLTrace {
    }
    public static int glGetInteger(int a0) {
       t("glGetInteger", a0);
-      Object r = call(35, "org.lwjgl.opengl.GL11", "glGetInteger", new Class<?>[]{int.class}, new Object[]{a0}); return r == null ? 0 : ((Integer) r);
+      Object r = call(35, "org.lwjgl.opengl.GL11", "glGetInteger", new Class<?>[]{int.class}, new Object[]{a0}); tr("glGetInteger", r, a0, null); return r == null ? 0 : ((Integer) r);
    }
    public static void glGetIntegerv(int a0, int[] a1) {
       t("glGetIntegerv", a0, a1);
@@ -174,39 +182,39 @@ public final class GLTrace {
    }
    public static java.lang.String glGetProgramInfoLog(int a0) {
       t("glGetProgramInfoLog", a0);
-      return (java.lang.String) call(37, "org.lwjgl.opengl.GL31", "glGetProgramInfoLog", new Class<?>[]{int.class}, new Object[]{a0});
+      Object r = call(37, "org.lwjgl.opengl.GL31", "glGetProgramInfoLog", new Class<?>[]{int.class}, new Object[]{a0}); tr("glGetProgramInfoLog", r, a0, null); return (java.lang.String) r;
    }
    public static int glGetProgrami(int a0, int a1) {
       t("glGetProgrami", a0, a1);
-      Object r = call(38, "org.lwjgl.opengl.GL31", "glGetProgrami", new Class<?>[]{int.class, int.class}, new Object[]{a0, a1}); return r == null ? 0 : ((Integer) r);
+      Object r = call(38, "org.lwjgl.opengl.GL31", "glGetProgrami", new Class<?>[]{int.class, int.class}, new Object[]{a0, a1}); tr("glGetProgrami", r, a0, a1); return r == null ? 0 : ((Integer) r);
    }
    public static long glGetQueryObjectui64(int a0, int a1) {
       t("glGetQueryObjectui64", a0, a1);
-      Object r = call(39, "org.lwjgl.opengl.GL33", "glGetQueryObjectui64", new Class<?>[]{int.class, int.class}, new Object[]{a0, a1}); return r == null ? 0L : ((Long) r);
+      Object r = call(39, "org.lwjgl.opengl.GL33", "glGetQueryObjectui64", new Class<?>[]{int.class, int.class}, new Object[]{a0, a1}); tr("glGetQueryObjectui64", r, a0, a1); return r == null ? 0L : ((Long) r);
    }
    public static java.lang.String glGetShaderInfoLog(int a0) {
       t("glGetShaderInfoLog", a0);
-      return (java.lang.String) call(40, "org.lwjgl.opengl.GL31", "glGetShaderInfoLog", new Class<?>[]{int.class}, new Object[]{a0});
+      Object r = call(40, "org.lwjgl.opengl.GL31", "glGetShaderInfoLog", new Class<?>[]{int.class}, new Object[]{a0}); tr("glGetShaderInfoLog", r, a0, null); return (java.lang.String) r;
    }
    public static int glGetShaderi(int a0, int a1) {
       t("glGetShaderi", a0, a1);
-      Object r = call(41, "org.lwjgl.opengl.GL31", "glGetShaderi", new Class<?>[]{int.class, int.class}, new Object[]{a0, a1}); return r == null ? 0 : ((Integer) r);
+      Object r = call(41, "org.lwjgl.opengl.GL31", "glGetShaderi", new Class<?>[]{int.class, int.class}, new Object[]{a0, a1}); tr("glGetShaderi", r, a0, a1); return r == null ? 0 : ((Integer) r);
    }
    public static int glGetUniformBlockIndex(int a0, java.lang.CharSequence a1) {
       t("glGetUniformBlockIndex", a0, a1);
-      Object r = call(42, "org.lwjgl.opengl.GL31", "glGetUniformBlockIndex", new Class<?>[]{int.class, java.lang.CharSequence.class}, new Object[]{a0, a1}); return r == null ? 0 : ((Integer) r);
+      Object r = call(42, "org.lwjgl.opengl.GL31", "glGetUniformBlockIndex", new Class<?>[]{int.class, java.lang.CharSequence.class}, new Object[]{a0, a1}); tr("glGetUniformBlockIndex", r, a0, a1); return r == null ? 0 : ((Integer) r);
    }
    public static int glGetUniformLocation(int a0, java.lang.CharSequence a1) {
       t("glGetUniformLocation", a0, a1);
-      Object r = call(43, "org.lwjgl.opengl.GL31", "glGetUniformLocation", new Class<?>[]{int.class, java.lang.CharSequence.class}, new Object[]{a0, a1}); return r == null ? 0 : ((Integer) r);
+      Object r = call(43, "org.lwjgl.opengl.GL31", "glGetUniformLocation", new Class<?>[]{int.class, java.lang.CharSequence.class}, new Object[]{a0, a1}); tr("glGetUniformLocation", r, a0, a1); return r == null ? 0 : ((Integer) r);
    }
    public static boolean glIsEnabled(int a0) {
       t("glIsEnabled", a0);
-      Object r = call(44, "org.lwjgl.opengl.GL33", "glIsEnabled", new Class<?>[]{int.class}, new Object[]{a0}); return r == null ? false : ((Boolean) r);
+      Object r = call(44, "org.lwjgl.opengl.GL33", "glIsEnabled", new Class<?>[]{int.class}, new Object[]{a0}); tr("glIsEnabled", r, a0, null); return r == null ? false : ((Boolean) r);
    }
    public static boolean glIsProgram(int a0) {
       t("glIsProgram", a0);
-      Object r = call(45, "org.lwjgl.opengl.GL33", "glIsProgram", new Class<?>[]{int.class}, new Object[]{a0}); return r == null ? false : ((Boolean) r);
+      Object r = call(45, "org.lwjgl.opengl.GL33", "glIsProgram", new Class<?>[]{int.class}, new Object[]{a0}); tr("glIsProgram", r, a0, null); return r == null ? false : ((Boolean) r);
    }
    public static void glLabelObjectEXT(int a0, int a1, java.lang.CharSequence a2) {
       t("glLabelObjectEXT", a0, a1, a2);
