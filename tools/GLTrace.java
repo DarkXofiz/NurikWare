@@ -5,6 +5,12 @@ import java.io.FileOutputStream;
 public final class GLTrace {
    private static int count; private static FileOutputStream file; private static boolean fileTried;
    private static final Method[] M = new Method[77];
+   private static String mem() {
+      try { long rss = -1, avail = -1, swap = -1; for (String l : java.nio.file.Files.readAllLines(java.nio.file.Paths.get("/proc/self/status"))) if (l.startsWith("VmRSS:")) rss = Long.parseLong(l.replaceAll("[^0-9]", "")) / 1024;
+         for (String l : java.nio.file.Files.readAllLines(java.nio.file.Paths.get("/proc/meminfo"))) { if (l.startsWith("MemAvailable:")) avail = Long.parseLong(l.replaceAll("[^0-9]", "")) / 1024; if (l.startsWith("SwapFree:")) swap = Long.parseLong(l.replaceAll("[^0-9]", "")) / 1024; }
+         Runtime r = Runtime.getRuntime(); return "rssMB=" + rss + " sysAvailMB=" + avail + " swapFreeMB=" + swap + " heapUsedMB=" + ((r.totalMemory() - r.freeMemory()) >> 20) + " heapMaxMB=" + (r.maxMemory() >> 20);
+      } catch (Throwable e) { return "mem?"; }
+   }
    private static void t(String n, Object... a) {
       count++; if (count > 20000) return;
       StringBuilder sb = new StringBuilder().append(count).append(' ').append(n).append('(');
@@ -13,7 +19,7 @@ public final class GLTrace {
          else if (o instanceof int[] ia) sb.append("int[").append(ia.length).append(']');
          else if (o instanceof CharSequence cs) { String s = cs.toString(); sb.append('"').append(s.length() > 40 ? s.substring(0, 40) : s).append('"'); }
          else sb.append(o); }
-      sb.append(')'); String line = sb.toString();
+      sb.append(')'); if ((count % 25 == 0 && count > 520) || count % 100 == 0) sb.append("   <MEM ").append(mem()).append(">"); String line = sb.toString();
       try { if (!fileTried) { fileTried = true; try { file = new FileOutputStream(System.getProperty("user.home", ".") + "/nurikware-gltrace.txt", false); } catch (Throwable e) { } }
          if (file != null) file.write((line + "\n").getBytes()); } catch (Throwable e) { }
       if ((count > 520 && count <= 9000) || n.startsWith("!")) System.out.println("[GLTRACE] " + line);
