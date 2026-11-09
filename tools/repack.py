@@ -7,8 +7,10 @@ import struct
 import sys
 import zipfile
 
-SRC = sys.argv[1] if len(sys.argv) > 1 else "original/NurikWare.jar"
-DST = sys.argv[2] if len(sys.argv) > 2 else "NurikWare.jar"
+TRACE_MODE = "--trace" in sys.argv
+_args = [a for a in sys.argv[1:] if not a.startswith("--")]
+SRC = _args[0] if len(_args) > 0 else "original/NurikWare.jar"
+DST = _args[1] if len(_args) > 1 else "NurikWare.jar"
 
 # Gercek dis kaynaklar degismez (sunucu adresi, uzak resim)
 PROTECT = [b"socket.nursultan.fun", b"nursultan-gif"]
@@ -70,17 +72,18 @@ def rewrite_class(data: bytes) -> bytes:
 GL_TARGETS = {b"glVertexAttribDivisor", b"glDrawElementsInstanced", b"glDrawArraysInstanced"}
 GL_OWNER = b"org/lwjgl/opengl/GL33"
 COMPAT_CLASS = b"NurikWare/PhoneCompat"
+TRACE_CLASS = b"NurikWare/GLTrace"
 
 
-def patch_gl(data: bytes) -> bytes:
-    if b"AttribDivisor" not in data and b"Instanced" not in data:
+def patch_gl(data: bytes, trace=None) -> bytes:
+    if b"org/lwjgl/opengl" not in data:
         return data
     count = struct.unpack(">H", data[8:10])[0]
     pos = 10
-    utf = {}      # index -> bytes
-    cls = {}      # index -> utf index
-    nat = {}      # index -> (name idx, desc idx)
-    mref = []     # (offset, class idx, nat idx)
+    utf = {}
+    cls = {}
+    nat = {}
+    mref = []
     i = 1
     while i < count:
         tag = data[pos]
@@ -104,22 +107,49 @@ def patch_gl(data: bytes) -> bytes:
         else:
             return data
         i += 1
-    hits = [off for off, c, n in mref
-            if utf.get(cls.get(c)) == GL_OWNER and n in nat and utf.get(nat[n][0]) in GL_TARGETS]
+    hits = []  # (offset, hedef sinif adi)
+    for off, c, n in mref:
+        owner = utf.get(cls.get(c))
+        if owner is None or n not in nat:
+            continue
+        name = utf.get(nat[n][0]); desc = utf.get(nat[n][1])
+        if owner == GL_OWNER and name in GL_TARGETS:
+            hits.append((off, COMPAT_CLASS))
+        elif trace and owner.startswith(b"org/lwjgl/opengl/") and (name, desc) in trace:
+            hits.append((off, TRACE_CLASS))
     if not hits:
         return data
-    new_utf, new_cls = count, count + 1
     buf = bytearray(data)
-    for off in hits:
-        buf[off + 1:off + 3] = struct.pack(">H", new_cls)
-    extra = (b"\x01" + struct.pack(">H", len(COMPAT_CLASS)) + COMPAT_CLASS
-             + b"\x07" + struct.pack(">H", new_utf))
-    buf[8:10] = struct.pack(">H", count + 2)
+    newidx = {}
+    extra = b""
+    nxt = count
+    for target in sorted({h[1] for h in hits}):
+        newidx[target] = nxt + 1
+        extra += (b"\x01" + struct.pack(">H", len(target)) + target + b"\x07" + struct.pack(">H", nxt))
+        nxt += 2
+    for off, target in hits:
+        buf[off + 1:off + 3] = struct.pack(">H", newidx[target])
+    buf[8:10] = struct.pack(">H", nxt)
     return bytes(buf[:pos]) + extra + bytes(buf[pos:])
 
 
 TEXT_EXT = (".json", ".mcmeta", ".txt", ".properties", ".lang", ".fsh", ".vsh", ".frag",
             ".vert", ".glsl", ".cfg", ".toml", ".yml", ".yaml", ".xml", ".mf", ".md", ".csv")
+
+
+def load_trace_sigs():
+    if not TRACE_MODE:
+        return None
+    here = __import__("os").path.dirname(__import__("os").path.abspath(__file__))
+    sigs = set()
+    for line in open(here + "/gltrace_sigs.txt", encoding="utf-8"):
+        if line.strip():
+            a, b = line.split()
+            sigs.add((a.encode(), b.encode()))
+    return sigs
+
+
+TRACE_SIGS = load_trace_sigs()
 
 
 def main():
@@ -143,7 +173,7 @@ def main():
         if low.endswith(".class"):
             data = rewrite_class(data); nclass += 1
             if new_name.startswith(("NurikWare/", "nurikware/")):
-                pdata = patch_gl(data)
+                pdata = patch_gl(data, TRACE_SIGS)
                 if pdata is not data:
                     npatched += 1
                 data = pdata
@@ -163,6 +193,11 @@ def main():
         zi = zipfile.ZipInfo("NurikWare/PhoneCompat.class", (2026, 1, 1, 0, 0, 0))
         zi.compress_type = zipfile.ZIP_DEFLATED
         zout.writestr(zi, f.read())
+    if TRACE_MODE:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "GLTrace.class"), "rb") as f:
+            zi = zipfile.ZipInfo("NurikWare/GLTrace.class", (2026, 1, 1, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            zout.writestr(zi, f.read())
     zout.close()
     print("tamam: %d sinif, %d metin kaynagi, %d sinifta telefon yamasi -> %s" % (nclass, nres, npatched, DST))
 
